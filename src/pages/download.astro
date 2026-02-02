@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Download">
+  <h1>Download</h1>
+  <p>Get the CSS files and start building.</p>
+
+  <h2>Full Bundle</h2>
+  <p>The complete Stoneware package: reset, tokens, components, and utilities.</p>
+
+  <a href="/stoneware.css" download class="sw-btn sw-btn-primary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+    Download stoneware.css
+  </a>
+
+  <p><strong>Includes:</strong></p>
+  <ul>
+    <li>CSS Reset</li>
+    <li>Design Tokens (CSS Variables)</li>
+    <li>Base Element Styles</li>
+    <li>All Component Classes (<code>sw-</code> prefixed)</li>
+    <li>Utility Classes</li>
+    <li>Dark Mode Support</li>
+  </ul>
+
+  <pre><code set:html={`&lt;link rel="stylesheet" href="stoneware.css"&gt;`}></code></pre>
+
+  <hr>
+
+  <h2>Tokens Only</h2>
+  <p>Just the CSS custom properties for building your own components.</p>
+
+  <a href="/stoneware-tokens.css" download class="sw-btn sw-btn-secondary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+    Download stoneware-tokens.css
+  </a>
+
+  <p><strong>Includes:</strong></p>
+  <ul>
+    <li>Design Tokens (CSS Variables)</li>
+    <li>Dark Mode Support</li>
+    <li><em>No reset, no component styles</em></li>
+  </ul>
+
+  <pre><code set:html={`&lt;link rel="stylesheet" href="stoneware-tokens.css"&gt;
+
+/* Then use tokens in your CSS */
+.my-button {
+  background: var(--sw-primary);
+  color: var(--sw-text-inverse);
+  padding: var(--sw-space-3) var(--sw-space-5);
+  border-radius: var(--sw-radius-lg);
+}`}></code></pre>
+
+  <hr>
+
+  <h2>Individual Components</h2>
+  <p>Copy component CSS directly from the documentation pages. Each component page includes the HTML markup and CSS styles.</p>
+
+  <p>Browse components:</p>
+  <ul>
+    <li><a href="/components/buttons">Buttons</a></li>
+    <li><a href="/components/inputs">Inputs</a></li>
+    <li><a href="/components/cards">Cards</a></li>
+    <li><a href="/components/lists">Lists</a></li>
+  </ul>
+
+  <hr>
+
+  <h2>File Sizes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>Size (minified)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>stoneware.css</code></td>
+        <td>~25 KB</td>
+      </tr>
+      <tr>
+        <td><code>stoneware-tokens.css</code></td>
+        <td>~4 KB</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Enable Dark Mode</h2>
+  <pre><code set:html={`&lt;html data-theme="dark"&gt;`}></code></pre>
+  <p>All tokens automatically adapt. No additional CSS required.</p>
+
+  <h2>Browser Support</h2>
+  <ul>
+    <li>Chrome/Edge 88+</li>
+    <li>Firefox 78+</li>
+    <li>Safari 14+</li>
+  </ul>
+  <p>No IE11 support.</p>
+</BaseLayout>

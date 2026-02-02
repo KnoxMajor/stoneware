@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Data Display">
+  <h1>Data Display</h1>
+  <p>Patterns for displaying data, records, and metrics.</p>
+
+  <h2>Metrics Row</h2>
+  <div class="preview">
+    <div class="sw-metrics-row">
+      <div class="sw-metric">
+        <span class="sw-metric-label">Total Users</span>
+        <span class="sw-metric-value">12,483</span>
+      </div>
+      <div class="sw-metric">
+        <span class="sw-metric-label">Active</span>
+        <span class="sw-metric-value" style="color: var(--sw-success);">8,294</span>
+      </div>
+      <div class="sw-metric">
+        <span class="sw-metric-label">Churn Rate</span>
+        <span class="sw-metric-value" style="color: var(--sw-danger);">2.4%</span>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-metrics-row"&gt;
+  &lt;div class="sw-metric"&gt;
+    &lt;span class="sw-metric-label"&gt;Total Users&lt;/span&gt;
+    &lt;span class="sw-metric-value"&gt;12,483&lt;/span&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Record Entry</h2>
+  <div class="preview">
+    <div style="border: 1px solid var(--sw-border-default); border-radius: 12px; overflow: hidden;">
+      <a href="#" class="sw-record-entry">
+        <div class="sw-field-grid">
+          <div class="sw-field">
+            <span class="sw-field-label">Name</span>
+            <span class="sw-field-value">Acme Corporation</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Type</span>
+            <span class="sw-field-value">Enterprise</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Status</span>
+            <span class="sw-tag sw-tag-success">Active</span>
+          </div>
+        </div>
+      </a>
+      <a href="#" class="sw-record-entry">
+        <div class="sw-field-grid">
+          <div class="sw-field">
+            <span class="sw-field-label">Name</span>
+            <span class="sw-field-value">Startup Inc</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Type</span>
+            <span class="sw-field-value">Startup</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Status</span>
+            <span class="sw-tag sw-tag-warning">Pending</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-metrics-row {
+  display: flex;
+  gap: var(--sw-space-8);
+}
+
+.sw-metric {
+  display: flex;
+  flex-direction: column;
+}
+
+.sw-metric-label {
+  font-size: var(--sw-text-sm);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--sw-space-1);
+}
+
+.sw-metric-value {
+  font-size: var(--sw-text-4xl);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-primary);
+}
+
+.sw-record-entry {
+  display: block;
+  padding: var(--sw-space-4);
+  text-decoration: none;
+  transition: background var(--sw-transition-fast);
+}
+
+.sw-record-entry:hover {
+  background: var(--sw-bg-hover);
+}
+
+.sw-record-entry:not(:last-child) {
+  border-bottom: 1px solid var(--sw-border-default);
+}`}></code></pre>
+</BaseLayout>

@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Cards">
+  <h1>Cards</h1>
+  <p>Containers for grouping related content.</p>
+
+  <h2>Default Card</h2>
+  <p>Elevated with shadow for primary content.</p>
+  <div class="preview" style="background: var(--sw-bg-page);">
+    <div class="sw-card" style="max-width: 400px;">
+      <div class="sw-card-body">
+        <p style="margin: 0; color: var(--sw-text-secondary);">This is a basic card with default styling. It has a subtle shadow for elevation.</p>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-card"&gt;
+  &lt;div class="sw-card-body"&gt;
+    &lt;p&gt;Card content here&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Bordered Card</h2>
+  <p>Border instead of shadow. Use inside other cards or modals.</p>
+  <div class="preview">
+    <div class="sw-card sw-card-bordered" style="max-width: 400px;">
+      <div class="sw-card-body">
+        <p style="margin: 0; color: var(--sw-text-secondary);">Bordered card without shadow. Good for nested content.</p>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-card sw-card-bordered"&gt;...&lt;/div&gt;`}></code></pre>
+
+  <h2>With Header</h2>
+  <div class="preview" style="background: var(--sw-bg-page);">
+    <div class="sw-card" style="max-width: 400px;">
+      <div class="sw-card-header">
+        <h4 class="sw-card-title">Card Title</h4>
+        <p class="sw-card-subtitle">Optional subtitle text</p>
+      </div>
+      <div class="sw-card-body">
+        <p style="margin: 0; color: var(--sw-text-secondary);">Card content goes here.</p>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-card"&gt;
+  &lt;div class="sw-card-header"&gt;
+    &lt;h4 class="sw-card-title"&gt;Card Title&lt;/h4&gt;
+    &lt;p class="sw-card-subtitle"&gt;Optional subtitle&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="sw-card-body"&gt;...&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>With Footer</h2>
+  <div class="preview" style="background: var(--sw-bg-page);">
+    <div class="sw-card" style="max-width: 400px;">
+      <div class="sw-card-header">
+        <h4 class="sw-card-title">Settings</h4>
+      </div>
+      <div class="sw-card-body">
+        <p style="margin: 0; color: var(--sw-text-secondary);">Make changes to your account settings here.</p>
+      </div>
+      <div class="sw-card-footer">
+        <button class="sw-btn sw-btn-ghost">Cancel</button>
+        <button class="sw-btn sw-btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-card"&gt;
+  &lt;div class="sw-card-header"&gt;...&lt;/div&gt;
+  &lt;div class="sw-card-body"&gt;...&lt;/div&gt;
+  &lt;div class="sw-card-footer"&gt;
+    &lt;button class="sw-btn sw-btn-ghost"&gt;Cancel&lt;/button&gt;
+    &lt;button class="sw-btn sw-btn-primary"&gt;Save&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-card {
+  background: var(--sw-bg-card);
+  border-radius: var(--sw-radius-2xl);
+  box-shadow: var(--sw-shadow-md);
+  overflow: hidden;
+}
+
+.sw-card-bordered {
+  border: 1px solid var(--sw-border-default);
+  box-shadow: none;
+}
+
+.sw-card-header {
+  padding: var(--sw-space-5) var(--sw-space-6);
+  border-bottom: 1px solid var(--sw-border-default);
+}
+
+.sw-card-title {
+  font-size: var(--sw-text-lg);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-primary);
+  margin: 0;
+}
+
+.sw-card-subtitle {
+  font-size: var(--sw-text-sm);
+  color: var(--sw-text-secondary);
+  margin: var(--sw-space-1) 0 0 0;
+}
+
+.sw-card-body {
+  padding: var(--sw-space-5) var(--sw-space-6);
+}
+
+.sw-card-footer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: var(--sw-space-3);
+  justify-content: flex-end;
+  padding: var(--sw-space-5) var(--sw-space-6);
+}`}></code></pre>
+</BaseLayout>

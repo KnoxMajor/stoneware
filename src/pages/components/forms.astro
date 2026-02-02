@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Forms">
+  <h1>Forms</h1>
+  <p>Form layouts and field patterns.</p>
+
+  <h2>Basic Form</h2>
+  <div class="preview" style="background: var(--sw-bg-page);">
+    <div class="sw-card" style="max-width: 400px;">
+      <div class="sw-card-body">
+        <div style="margin-bottom: 16px;">
+          <label class="sw-label">Full Name</label>
+          <input type="text" class="sw-input" placeholder="John Doe">
+        </div>
+        <div style="margin-bottom: 16px;">
+          <label class="sw-label">Email Address</label>
+          <input type="email" class="sw-input" placeholder="john@example.com">
+        </div>
+        <div style="margin-bottom: 24px;">
+          <label class="sw-label">Message</label>
+          <textarea class="sw-textarea" placeholder="Your message..."></textarea>
+        </div>
+        <div style="display: flex; flex-direction: row-reverse; gap: 12px; justify-content: flex-end;">
+          <button class="sw-btn sw-btn-ghost">Cancel</button>
+          <button class="sw-btn sw-btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Spacing Rules</h2>
+  <table>
+    <thead>
+      <tr><th>Element</th><th>Spacing</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Label to Input</td><td>4px (space-1)</td></tr>
+      <tr><td>Field to Field</td><td>16px (space-4)</td></tr>
+      <tr><td>Last field to Buttons</td><td>24px (space-6)</td></tr>
+      <tr><td>Button to Button</td><td>12px (space-3)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Field Grid</h2>
+  <p>Display read-only data in a grid layout.</p>
+  <div class="preview">
+    <div class="sw-field-grid" style="max-width: 400px;">
+      <div class="sw-field">
+        <span class="sw-field-label">Name</span>
+        <span class="sw-field-value">John Doe</span>
+      </div>
+      <div class="sw-field">
+        <span class="sw-field-label">Role</span>
+        <span class="sw-field-value">Designer</span>
+      </div>
+      <div class="sw-field">
+        <span class="sw-field-label">Location</span>
+        <span class="sw-field-value">San Francisco</span>
+      </div>
+      <div class="sw-field">
+        <span class="sw-field-label">Department</span>
+        <span class="sw-field-value">Design</span>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-field-grid"&gt;
+  &lt;div class="sw-field"&gt;
+    &lt;span class="sw-field-label"&gt;Name&lt;/span&gt;
+    &lt;span class="sw-field-value"&gt;John Doe&lt;/span&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-label {
+  display: block;
+  font-size: var(--sw-text-xs);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--sw-space-1);
+}
+
+.sw-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sw-space-4);
+}
+
+.sw-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sw-space-1);
+}
+
+.sw-field-label {
+  font-size: var(--sw-text-xs);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sw-field-value {
+  font-size: var(--sw-text-md);
+  font-weight: var(--sw-font-medium);
+  color: var(--sw-text-primary);
+}`}></code></pre>
+</BaseLayout>

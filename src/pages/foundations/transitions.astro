@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Transitions">
+  <h1>Transitions</h1>
+  <p>Animation timing for smooth interactions.</p>
+
+  <h2>Speed Scale</h2>
+  <table>
+    <thead>
+      <tr><th>Token</th><th>Duration</th><th>Use Case</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>transition-fast</code></td><td>0.15s ease</td><td>Hover states, button presses</td></tr>
+      <tr><td><code>transition-normal</code></td><td>0.2s ease</td><td>Focus states, small reveals</td></tr>
+      <tr><td><code>transition-slow</code></td><td>0.3s ease</td><td>Panel slides, modal fades</td></tr>
+      <tr><td><code>transition-smooth</code></td><td>0.5s cubic-bezier</td><td>Page transitions, large animations</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Interactive Demo</h2>
+  <div class="preview">
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <button class="demo-btn fast">Fast (0.15s)</button>
+      <button class="demo-btn normal">Normal (0.2s)</button>
+      <button class="demo-btn slow">Slow (0.3s)</button>
+    </div>
+  </div>
+
+  <h2>Usage</h2>
+  <pre><code set:html={`.my-button {
+  transition: all var(--sw-transition-fast);
+}
+
+.my-button:hover {
+  background: var(--sw-bg-hover);
+}
+
+.my-modal {
+  transition: opacity var(--sw-transition-slow);
+}`}></code></pre>
+</BaseLayout>
+
+<style>
+  .demo-btn {
+    padding: 12px 24px;
+    background: var(--sw-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .demo-btn.fast {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .demo-btn.normal {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .demo-btn.slow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .demo-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+</style>

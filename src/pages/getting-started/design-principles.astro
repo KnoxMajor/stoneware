@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Design Principles">
+  <h1>Design Principles</h1>
+  <p>The guiding philosophy behind Stoneware's visual language.</p>
+
+  <h2>1. Minimal & Clean</h2>
+  <p>Every element earns its place. Remove visual noise. Embrace generous whitespace. Let content breathe and speak for itself.</p>
+
+  <h2>2. Dark Accents</h2>
+  <p>Primary actions use near-black (<code>#18181b</code>), not bright colors. This creates a sophisticated, professional look that doesn't compete with content.</p>
+
+  <div class="preview">
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <button class="sw-btn sw-btn-primary">Dark Primary</button>
+      <span style="color: var(--sw-text-muted);">vs.</span>
+      <button style="background: #3b82f6; color: white; padding: 11px 20px; border-radius: 8px; border: none; font-size: 15px; font-weight: 500;">Bright Blue</button>
+    </div>
+  </div>
+
+  <h2>3. Subtle Shadows</h2>
+  <p>Light, layered shadows create depth without distraction. Cards feel elevated but not heavy.</p>
+
+  <div class="preview" style="background: var(--sw-bg-page);">
+    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
+      <div style="padding: 24px 32px; background: white; border-radius: 12px; box-shadow: var(--sw-shadow-sm);">Shadow SM</div>
+      <div style="padding: 24px 32px; background: white; border-radius: 12px; box-shadow: var(--sw-shadow-md);">Shadow MD</div>
+      <div style="padding: 24px 32px; background: white; border-radius: 12px; box-shadow: var(--sw-shadow-lg);">Shadow LG</div>
+    </div>
+  </div>
+
+  <h2>4. Smooth Transitions</h2>
+  <p>0.15s-0.3s eases for micro-interactions. Fast enough to feel responsive, slow enough to notice and appreciate.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Speed</th>
+        <th>Duration</th>
+        <th>Use Case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fast</td>
+        <td>0.15s</td>
+        <td>Hover states, button presses</td>
+      </tr>
+      <tr>
+        <td>Normal</td>
+        <td>0.2s</td>
+        <td>Focus states, small reveals</td>
+      </tr>
+      <tr>
+        <td>Slow</td>
+        <td>0.3s</td>
+        <td>Panel slides, modal fades</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>5. Consistent Spacing</h2>
+  <p>4px base unit. Every measurement is intentional and follows the scale.</p>
+
+  <div class="preview">
+    <div style="display: flex; gap: 16px; align-items: flex-end;">
+      <div style="text-align: center;">
+        <div style="width: 4px; height: 4px; background: var(--sw-primary); margin: 0 auto 8px;"></div>
+        <span style="font-size: 11px; color: var(--sw-text-muted);">4px</span>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 8px; height: 8px; background: var(--sw-primary); margin: 0 auto 8px;"></div>
+        <span style="font-size: 11px; color: var(--sw-text-muted);">8px</span>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 12px; height: 12px; background: var(--sw-primary); margin: 0 auto 8px;"></div>
+        <span style="font-size: 11px; color: var(--sw-text-muted);">12px</span>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 16px; height: 16px; background: var(--sw-primary); margin: 0 auto 8px;"></div>
+        <span style="font-size: 11px; color: var(--sw-text-muted);">16px</span>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 24px; height: 24px; background: var(--sw-primary); margin: 0 auto 8px;"></div>
+        <span style="font-size: 11px; color: var(--sw-text-muted);">24px</span>
+      </div>
+      <div style="text-align: center;">
+        <div style="width: 32px; height: 32px; background: var(--sw-primary); margin: 0 auto 8px;"></div>
+        <span style="font-size: 11px; color: var(--sw-text-muted);">32px</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>6. Semantic Color Usage</h2>
+  <p>Colors communicate meaning. Green for success, amber for warning, red for danger. Use sparingly and consistently.</p>
+
+  <div class="preview">
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <span class="sw-tag sw-tag-success">Success</span>
+      <span class="sw-tag sw-tag-warning">Warning</span>
+      <span class="sw-tag sw-tag-danger">Danger</span>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Progress">
+  <h1>Progress</h1>
+  <p>Loading indicators and progress visualization.</p>
+
+  <h2>Spinner</h2>
+  <div class="preview">
+    <div class="preview-row">
+      <div class="sw-spinner"></div>
+      <div class="sw-spinner sw-spinner-sm"></div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-spinner"&gt;&lt;/div&gt;
+&lt;div class="sw-spinner sw-spinner-sm"&gt;&lt;/div&gt;`}></code></pre>
+
+  <h2>Progress Dots</h2>
+  <p>Step indicators for multi-step flows.</p>
+  <div class="preview">
+    <div class="sw-progress-dots">
+      <div class="sw-progress-dot completed"></div>
+      <div class="sw-progress-dot completed"></div>
+      <div class="sw-progress-dot active"></div>
+      <div class="sw-progress-dot"></div>
+      <div class="sw-progress-dot"></div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-progress-dots"&gt;
+  &lt;div class="sw-progress-dot completed"&gt;&lt;/div&gt;
+  &lt;div class="sw-progress-dot completed"&gt;&lt;/div&gt;
+  &lt;div class="sw-progress-dot active"&gt;&lt;/div&gt;
+  &lt;div class="sw-progress-dot"&gt;&lt;/div&gt;
+  &lt;div class="sw-progress-dot"&gt;&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--sw-gray-200);
+  border-top-color: var(--sw-primary);
+  border-radius: var(--sw-radius-full);
+  animation: sw-spin 1s linear infinite;
+}
+
+.sw-spinner-sm {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes sw-spin {
+  to { transform: rotate(360deg); }
+}
+
+.sw-progress-dots {
+  display: flex;
+  gap: var(--sw-space-2);
+  justify-content: center;
+}
+
+.sw-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--sw-radius-full);
+  background: var(--sw-gray-200);
+  transition: all var(--sw-transition-slow);
+}
+
+.sw-progress-dot.active {
+  background: var(--sw-primary);
+  width: 24px;
+  border-radius: var(--sw-radius-sm);
+}
+
+.sw-progress-dot.completed {
+  background: var(--sw-gray-400);
+}`}></code></pre>
+</BaseLayout>

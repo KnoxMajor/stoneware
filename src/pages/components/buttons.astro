@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Buttons">
+  <h1>Buttons</h1>
+  <p>Button variants for different actions and contexts.</p>
+
+  <h2>Primary</h2>
+  <p>For the main action on a page. Use sparingly—one per section.</p>
+
+  <div class="preview">
+    <button class="sw-btn sw-btn-primary">Primary Button</button>
+  </div>
+
+  <pre><code set:html={`&lt;button class="sw-btn sw-btn-primary"&gt;Primary Button&lt;/button&gt;`}></code></pre>
+
+  <h2>Secondary</h2>
+  <p>For secondary actions. Bordered, transparent background.</p>
+
+  <div class="preview">
+    <button class="sw-btn sw-btn-secondary">Secondary Button</button>
+  </div>
+
+  <pre><code set:html={`&lt;button class="sw-btn sw-btn-secondary"&gt;Secondary Button&lt;/button&gt;`}></code></pre>
+
+  <h2>Ghost</h2>
+  <p>For tertiary actions or toolbars. Minimal visual weight.</p>
+
+  <div class="preview">
+    <button class="sw-btn sw-btn-ghost">Ghost Button</button>
+  </div>
+
+  <pre><code set:html={`&lt;button class="sw-btn sw-btn-ghost"&gt;Ghost Button&lt;/button&gt;`}></code></pre>
+
+  <h2>Danger</h2>
+  <p>For destructive actions like delete. Use with confirmation dialogs.</p>
+
+  <div class="preview">
+    <button class="sw-btn sw-btn-danger">Delete</button>
+  </div>
+
+  <pre><code set:html={`&lt;button class="sw-btn sw-btn-danger"&gt;Delete&lt;/button&gt;`}></code></pre>
+
+  <h2>Sizes</h2>
+  <p>Default size plus a small variant for compact UIs.</p>
+
+  <div class="preview">
+    <div class="preview-row">
+      <button class="sw-btn sw-btn-primary">Default</button>
+      <button class="sw-btn sw-btn-primary sw-btn-sm">Small</button>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;button class="sw-btn sw-btn-primary"&gt;Default&lt;/button&gt;
+&lt;button class="sw-btn sw-btn-primary sw-btn-sm"&gt;Small&lt;/button&gt;`}></code></pre>
+
+  <h2>With Icons</h2>
+  <p>Buttons can include icons before or after text.</p>
+
+  <div class="preview">
+    <div class="preview-row">
+      <button class="sw-btn sw-btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+        Add Item
+      </button>
+      <button class="sw-btn sw-btn-secondary">
+        Download
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <h2>Button Group</h2>
+  <p>Use flex and gap utilities to group buttons.</p>
+
+  <div class="preview">
+    <div style="display: flex; gap: 12px;">
+      <button class="sw-btn sw-btn-ghost">Cancel</button>
+      <button class="sw-btn sw-btn-primary">Save Changes</button>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;div style="display: flex; gap: 12px;"&gt;
+  &lt;button class="sw-btn sw-btn-ghost"&gt;Cancel&lt;/button&gt;
+  &lt;button class="sw-btn sw-btn-primary"&gt;Save Changes&lt;/button&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sw-space-2);
+  padding: 11px 20px;
+  border-radius: var(--sw-radius-lg);
+  font-family: var(--sw-font-family);
+  font-size: var(--sw-text-lg);
+  font-weight: var(--sw-font-medium);
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--sw-transition-fast);
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.sw-btn-primary {
+  background: var(--sw-primary);
+  color: var(--sw-text-inverse);
+}
+
+.sw-btn-primary:hover {
+  background: var(--sw-primary-hover);
+}
+
+.sw-btn-secondary {
+  background: transparent;
+  color: var(--sw-text-secondary);
+  border: 1.5px solid var(--sw-border-default);
+}
+
+.sw-btn-secondary:hover {
+  background: var(--sw-bg-hover);
+  border-color: var(--sw-border-hover);
+}
+
+.sw-btn-ghost {
+  background: transparent;
+  color: var(--sw-text-secondary);
+}
+
+.sw-btn-ghost:hover {
+  background: var(--sw-bg-hover);
+  color: var(--sw-text-primary);
+}
+
+.sw-btn-danger {
+  background: var(--sw-danger);
+  color: white;
+}
+
+.sw-btn-danger:hover {
+  background: var(--sw-danger-hover);
+}
+
+.sw-btn-sm {
+  padding: 6px 12px;
+  font-size: var(--sw-text-sm);
+}`}></code></pre>
+</BaseLayout>

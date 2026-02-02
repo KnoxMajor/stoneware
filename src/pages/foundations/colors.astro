@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Colors">
+  <h1>Colors</h1>
+  <p>The Stoneware color palette built on CSS custom properties.</p>
+
+  <h2>Neutrals</h2>
+  <p>The gray scale forms the foundation. Used for text, backgrounds, and borders.</p>
+  <div class="color-grid">
+    <div class="color-swatch" style="background: var(--sw-white);"><span>white</span><span>#ffffff</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-50);"><span>gray-50</span><span>#fafafa</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-100);"><span>gray-100</span><span>#f4f4f5</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-200);"><span>gray-200</span><span>#e4e4e7</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-300);"><span>gray-300</span><span>#d4d4d8</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-400); color: white;"><span>gray-400</span><span>#a1a1aa</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-500); color: white;"><span>gray-500</span><span>#71717a</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-600); color: white;"><span>gray-600</span><span>#52525b</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-700); color: white;"><span>gray-700</span><span>#3f3f46</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-800); color: white;"><span>gray-800</span><span>#27272a</span></div>
+    <div class="color-swatch" style="background: var(--sw-gray-900); color: white;"><span>gray-900</span><span>#18181b</span></div>
+    <div class="color-swatch" style="background: var(--sw-black); color: white;"><span>black</span><span>#0a0a0a</span></div>
+  </div>
+
+  <h2>Semantic Colors</h2>
+  <div class="color-grid">
+    <div class="color-swatch" style="background: var(--sw-success); color: white;"><span>success</span><span>#16a34a</span></div>
+    <div class="color-swatch" style="background: var(--sw-warning); color: white;"><span>warning</span><span>#d97706</span></div>
+    <div class="color-swatch" style="background: var(--sw-danger); color: white;"><span>danger</span><span>#dc2626</span></div>
+    <div class="color-swatch" style="background: var(--sw-accent); color: white;"><span>accent</span><span>#1c8ece</span></div>
+  </div>
+
+  <h2>Usage</h2>
+  <pre><code set:html={`/* Use via CSS variables */
+.my-element {
+  color: var(--sw-text-primary);
+  background: var(--sw-bg-card);
+  border: 1px solid var(--sw-border-default);
+}`}></code></pre>
+</BaseLayout>
+
+<style>
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .color-swatch {
+    padding: 24px 12px 12px;
+    border-radius: 8px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid var(--sw-border-default);
+  }
+  .color-swatch span:first-child {
+    font-weight: 600;
+  }
+  .color-swatch span:last-child {
+    opacity: 0.7;
+  }
+</style>

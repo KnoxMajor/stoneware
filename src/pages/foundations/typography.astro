@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Typography">
+  <h1>Typography</h1>
+  <p>Type scale and styles for consistent text hierarchy.</p>
+
+  <h2>Font Family</h2>
+  <p>System font stack for optimal performance across all devices. Natively.</p>
+  <pre><code set:html={`--sw-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;`}></code></pre>
+
+  <h2>Type Scale</h2>
+  <div class="type-scale">
+    <div class="type-row"><span class="type-sample" style="font-size: 28px;">Heading XL</span><span class="type-meta">28px / text-5xl</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 24px;">Heading L</span><span class="type-meta">24px / text-4xl</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 20px;">Heading M</span><span class="type-meta">20px / text-3xl</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 18px;">Heading S</span><span class="type-meta">18px / text-2xl</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 16px;">Large Text</span><span class="type-meta">16px / text-xl</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 15px;">Body Large</span><span class="type-meta">15px / text-lg</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 14px;">Body Default</span><span class="type-meta">14px / text-md</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 13px;">Body Small</span><span class="type-meta">13px / text-base</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 12px;">Caption</span><span class="type-meta">12px / text-sm</span></div>
+    <div class="type-row"><span class="type-sample" style="font-size: 11px;">Label</span><span class="type-meta">11px / text-xs</span></div>
+  </div>
+
+  <h2>Font Weights</h2>
+  <div class="type-scale">
+    <div class="type-row"><span class="type-sample" style="font-weight: 400;">Regular weight</span><span class="type-meta">400 / normal</span></div>
+    <div class="type-row"><span class="type-sample" style="font-weight: 500;">Medium weight</span><span class="type-meta">500 / medium</span></div>
+    <div class="type-row"><span class="type-sample" style="font-weight: 600;">Semibold weight</span><span class="type-meta">600 / semibold</span></div>
+    <div class="type-row"><span class="type-sample" style="font-weight: 700;">Bold weight</span><span class="type-meta">700 / bold</span></div>
+  </div>
+
+  <h2>Usage</h2>
+  <pre><code set:html={`.heading {
+  font-size: var(--sw-text-4xl);
+  font-weight: var(--sw-font-semibold);
+  line-height: var(--sw-leading-tight);
+}
+
+.body {
+  font-size: var(--sw-text-md);
+  line-height: var(--sw-leading-relaxed);
+}`}></code></pre>
+</BaseLayout>
+
+<style>
+  .type-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--sw-border-default);
+  }
+  .type-sample {
+    color: var(--sw-text-primary);
+  }
+  .type-meta {
+    font-size: 12px;
+    color: var(--sw-text-muted);
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Installation">
+  <h1>Installation</h1>
+  <p>Get Stoneware into your project in seconds.</p>
+
+  <h2>Option 1: Full Bundle</h2>
+  <p>Download the complete package and drop it into your project.</p>
+
+  <a href="/stoneware.css" download class="sw-btn sw-btn-primary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+    Download stoneware.css
+  </a>
+
+  <p>Then add it to your HTML:</p>
+
+  <pre><code set:html={`&lt;link rel="stylesheet" href="stoneware.css"&gt;`}></code></pre>
+
+  <p><strong>Includes:</strong></p>
+  <ul>
+    <li>CSS Reset</li>
+    <li>Design Tokens (CSS Variables)</li>
+    <li>Base Element Styles</li>
+    <li>All Component Classes (<code>sw-</code> prefixed)</li>
+    <li>Utility Classes</li>
+    <li>Dark Mode Support</li>
+  </ul>
+
+  <h2>Option 2: Tokens Only</h2>
+  <p>Just the CSS custom properties for building your own components.</p>
+
+  <a href="/stoneware-tokens.css" download class="sw-btn sw-btn-secondary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+    Download stoneware-tokens.css
+  </a>
+
+  <p>Use tokens in your own CSS:</p>
+
+  <pre><code set:html={`.my-button {
+  background: var(--sw-primary);
+  color: var(--sw-text-inverse);
+  padding: var(--sw-space-3) var(--sw-space-5);
+  border-radius: var(--sw-radius-lg);
+}`}></code></pre>
+
+  <h2>Option 3: Copy Individual Components</h2>
+  <p>Each component documentation page shows the exact CSS. Copy what you need.</p>
+  <p>This works best when you've already loaded <code>stoneware-tokens.css</code> for the variables.</p>
+
+  <h2>Enable Dark Mode</h2>
+  <p>Add <code>data-theme="dark"</code> to your HTML element:</p>
+
+  <pre><code set:html={`&lt;html data-theme="dark"&gt;`}></code></pre>
+
+  <p>All tokens automatically adapt. No additional CSS required.</p>
+
+  <h2>Browser Support</h2>
+  <p>Stoneware uses CSS custom properties and requires:</p>
+  <ul>
+    <li>Chrome/Edge 88+</li>
+    <li>Firefox 78+</li>
+    <li>Safari 14+</li>
+  </ul>
+  <p>No IE11 support.</p>
+</BaseLayout>

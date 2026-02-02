@@ -1,0 +1,382 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A minimal, dark-accent design system' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content={description}>
+  <title>{title} | Stoneware</title>
+  <link rel="stylesheet" href="/stoneware.css">
+  <style is:global>
+    /* Site-specific styles */
+    body {
+      min-height: 100vh;
+      background: var(--sw-bg-page);
+    }
+
+    .site-wrapper {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      background: var(--sw-bg-card);
+      border-right: 1px solid var(--sw-border-default);
+      padding: var(--sw-space-6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      font-size: var(--sw-text-xl);
+      font-weight: var(--sw-font-bold);
+      color: var(--sw-text-primary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: var(--sw-space-8);
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sw-space-6);
+    }
+
+    .nav-group-title {
+      font-size: var(--sw-text-xs);
+      font-weight: var(--sw-font-semibold);
+      color: var(--sw-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--sw-space-2);
+    }
+
+    .nav-group-links {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sw-space-1);
+    }
+
+    .nav-link {
+      display: block;
+      padding: var(--sw-space-2) var(--sw-space-3);
+      border-radius: var(--sw-radius-md);
+      font-size: var(--sw-text-md);
+      color: var(--sw-text-secondary);
+      text-decoration: none;
+      transition: all var(--sw-transition-fast);
+    }
+
+    .nav-link:hover {
+      background: var(--sw-bg-hover);
+      color: var(--sw-text-primary);
+    }
+
+    .nav-link.active {
+      background: var(--sw-bg-hover);
+      color: var(--sw-text-primary);
+      font-weight: var(--sw-font-medium);
+    }
+
+    /* Main content */
+    .main-content {
+      flex: 1;
+      margin-left: 260px;
+      padding: var(--sw-space-10);
+      max-width: 900px;
+    }
+
+    /* Typography in content */
+    .content h1 {
+      font-size: var(--sw-text-5xl);
+      font-weight: var(--sw-font-semibold);
+      color: var(--sw-text-primary);
+      margin-bottom: var(--sw-space-2);
+      line-height: var(--sw-leading-tight);
+    }
+
+    .content > p:first-of-type {
+      font-size: var(--sw-text-lg);
+      color: var(--sw-text-secondary);
+      margin-bottom: var(--sw-space-8);
+    }
+
+    .content h2 {
+      font-size: var(--sw-text-3xl);
+      font-weight: var(--sw-font-semibold);
+      color: var(--sw-text-primary);
+      margin-top: var(--sw-space-10);
+      margin-bottom: var(--sw-space-4);
+      padding-top: var(--sw-space-6);
+      border-top: 1px solid var(--sw-border-default);
+    }
+
+    .content h3 {
+      font-size: var(--sw-text-xl);
+      font-weight: var(--sw-font-semibold);
+      color: var(--sw-text-primary);
+      margin-top: var(--sw-space-6);
+      margin-bottom: var(--sw-space-3);
+    }
+
+    .content p {
+      font-size: var(--sw-text-md);
+      line-height: 1.7;
+      color: var(--sw-text-secondary);
+      margin-bottom: var(--sw-space-4);
+    }
+
+    .content ul, .content ol {
+      margin-bottom: var(--sw-space-4);
+      padding-left: var(--sw-space-6);
+    }
+
+    .content li {
+      font-size: var(--sw-text-md);
+      line-height: 1.7;
+      color: var(--sw-text-secondary);
+      margin-bottom: var(--sw-space-2);
+    }
+
+    .content a {
+      color: var(--sw-text-primary);
+      text-decoration: none;
+    }
+
+    .content code:not(pre code) {
+      background: var(--sw-gray-100);
+      padding: 2px 6px;
+      border-radius: var(--sw-radius-sm);
+      font-size: 0.9em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .content pre {
+      position: relative;
+      background: var(--sw-gray-900);
+      color: var(--sw-gray-100);
+      padding: var(--sw-space-4);
+      border-radius: var(--sw-radius-lg);
+      overflow-x: auto;
+      margin-bottom: var(--sw-space-4);
+      font-size: var(--sw-text-sm);
+      line-height: 1.6;
+    }
+
+    .content pre code {
+      background: none;
+      padding: 0;
+      font-size: inherit;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: transparent;
+      border: none;
+      padding: 6px;
+      cursor: pointer;
+      border-radius: var(--sw-radius-md);
+      transition: background var(--sw-transition-fast);
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .copy-btn svg {
+      width: 16px;
+      height: 16px;
+      color: var(--sw-gray-400);
+    }
+
+    .copy-btn.copied svg {
+      color: var(--sw-success);
+    }
+
+    .content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--sw-space-6);
+    }
+
+    .content th {
+      text-align: left;
+      padding: var(--sw-space-3) var(--sw-space-4);
+      background: var(--sw-gray-50);
+      border-bottom: 1px solid var(--sw-border-default);
+      font-size: var(--sw-text-xs);
+      font-weight: var(--sw-font-semibold);
+      color: var(--sw-text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .content td {
+      padding: var(--sw-space-3) var(--sw-space-4);
+      border-bottom: 1px solid var(--sw-border-default);
+      font-size: var(--sw-text-md);
+      color: var(--sw-text-secondary);
+    }
+
+    .content hr {
+      border: none;
+      border-top: 1px solid var(--sw-border-default);
+      margin: var(--sw-space-8) 0;
+    }
+
+    /* Preview boxes for components */
+    .preview {
+      background: var(--sw-bg-page);
+      border: 1px solid var(--sw-border-default);
+      border-radius: var(--sw-radius-xl);
+      padding: var(--sw-space-6);
+      margin-bottom: var(--sw-space-4);
+    }
+
+    .preview-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sw-space-3);
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .sidebar {
+        display: none;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: var(--sw-space-6);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <aside class="sidebar">
+      <a href="/" class="sidebar-logo">Stoneware</a>
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <div class="nav-group-title">Getting Started</div>
+          <div class="nav-group-links">
+            <a href="/getting-started/introduction" class="nav-link">Introduction</a>
+            <a href="/getting-started/installation" class="nav-link">Installation</a>
+            <a href="/getting-started/design-principles" class="nav-link">Design Principles</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-title">Foundations</div>
+          <div class="nav-group-links">
+            <a href="/foundations/colors" class="nav-link">Colors</a>
+            <a href="/foundations/typography" class="nav-link">Typography</a>
+            <a href="/foundations/spacing" class="nav-link">Spacing</a>
+            <a href="/foundations/shadows" class="nav-link">Shadows</a>
+            <a href="/foundations/transitions" class="nav-link">Transitions</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-title">Components</div>
+          <div class="nav-group-links">
+            <a href="/components/buttons" class="nav-link">Buttons</a>
+            <a href="/components/inputs" class="nav-link">Inputs</a>
+            <a href="/components/cards" class="nav-link">Cards</a>
+            <a href="/components/lists" class="nav-link">Lists</a>
+            <a href="/components/modals" class="nav-link">Modals</a>
+            <a href="/components/navigation" class="nav-link">Navigation</a>
+            <a href="/components/chips-tags" class="nav-link">Chips & Tags</a>
+            <a href="/components/progress" class="nav-link">Progress</a>
+            <a href="/components/banners" class="nav-link">Banners</a>
+            <a href="/components/avatars" class="nav-link">Avatars</a>
+            <a href="/components/forms" class="nav-link">Forms</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-title">Patterns</div>
+          <div class="nav-group-links">
+            <a href="/patterns/layouts" class="nav-link">Layouts</a>
+            <a href="/patterns/data-display" class="nav-link">Data Display</a>
+          </div>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-title">Resources</div>
+          <div class="nav-group-links">
+            <a href="/download" class="nav-link">Download</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="content">
+        <slot />
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Highlight active nav link
+    const currentPath = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach(link => {
+      if (link.getAttribute('href') === currentPath ||
+          (currentPath === '/' && link.getAttribute('href') === '/getting-started/introduction')) {
+        link.classList.add('active');
+      }
+    });
+
+    // Add copy buttons to all code blocks
+    document.querySelectorAll('.content pre').forEach(pre => {
+      const btn = document.createElement('button');
+      btn.className = 'copy-btn';
+      btn.setAttribute('aria-label', 'Copy code');
+      btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      </svg>`;
+
+      btn.addEventListener('click', async () => {
+        const code = pre.querySelector('code');
+        const text = code ? code.textContent : pre.textContent;
+
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.classList.add('copied');
+          btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>`;
+
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>`;
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy:', err);
+        }
+      });
+
+      pre.appendChild(btn);
+    });
+  </script>
+</body>
+</html>

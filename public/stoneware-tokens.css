@@ -1,0 +1,196 @@
+/**
+ * STONEWARE DESIGN TOKENS
+ *
+ * CSS Custom Properties only - no reset, no components.
+ * Use this file if you want to build your own components
+ * using the Stoneware design language.
+ */
+
+:root {
+  /* ==========================================================================
+     COLORS
+     ========================================================================== */
+
+  /* Neutrals (Gray scale) */
+  --sw-white: #ffffff;
+  --sw-gray-50: #fafafa;
+  --sw-gray-100: #f4f4f5;
+  --sw-gray-200: #e4e4e7;
+  --sw-gray-300: #d4d4d8;
+  --sw-gray-400: #a1a1aa;
+  --sw-gray-500: #71717a;
+  --sw-gray-600: #52525b;
+  --sw-gray-700: #3f3f46;
+  --sw-gray-800: #27272a;
+  --sw-gray-900: #18181b;
+  --sw-black: #0a0a0a;
+
+  /* Primary (Dark - used for buttons, emphasis) */
+  --sw-primary: #18181b;
+  --sw-primary-hover: #27272a;
+  --sw-primary-active: #3f3f46;
+
+  /* Accent (Blue - used sparingly for highlights) */
+  --sw-accent: #1c8ece;
+  --sw-accent-light: #61a9d9;
+  --sw-accent-bg: #eff6ff;
+
+  /* Semantic Colors */
+  --sw-success: #16a34a;
+  --sw-success-bg: #f0fdf4;
+  --sw-success-border: #86efac;
+  --sw-warning: #d97706;
+  --sw-warning-bg: #fef3c7;
+  --sw-warning-border: #fcd34d;
+  --sw-warning-text: #92400e;
+  --sw-danger: #dc2626;
+  --sw-danger-hover: #b91c1c;
+  --sw-danger-bg: #fef2f2;
+  --sw-danger-border: #fecaca;
+
+  /* Background Colors */
+  --sw-bg-page: #f9fafb;
+  --sw-bg-card: #ffffff;
+  --sw-bg-elevated: #ffffff;
+  --sw-bg-input: #fafafa;
+  --sw-bg-input-focus: #ffffff;
+  --sw-bg-hover: #f4f4f5;
+  --sw-bg-selected: #fafafa;
+
+  /* Text Colors */
+  --sw-text-primary: #0a0a0a;
+  --sw-text-secondary: #52525b;
+  --sw-text-tertiary: #71717a;
+  --sw-text-muted: #a1a1aa;
+  --sw-text-inverse: #ffffff;
+
+  /* Border Colors */
+  --sw-border-default: #e4e4e7;
+  --sw-border-hover: #d4d4d8;
+  --sw-border-focus: #18181b;
+  --sw-border-selected: #18181b;
+
+  /* ==========================================================================
+     TYPOGRAPHY
+     ========================================================================== */
+
+  --sw-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Font Sizes */
+  --sw-text-xs: 11px;
+  --sw-text-sm: 12px;
+  --sw-text-base: 13px;
+  --sw-text-md: 14px;
+  --sw-text-lg: 15px;
+  --sw-text-xl: 16px;
+  --sw-text-2xl: 18px;
+  --sw-text-3xl: 20px;
+  --sw-text-4xl: 24px;
+  --sw-text-5xl: 28px;
+
+  /* Font Weights */
+  --sw-font-normal: 400;
+  --sw-font-medium: 500;
+  --sw-font-semibold: 600;
+  --sw-font-bold: 700;
+
+  /* Line Heights */
+  --sw-leading-tight: 1.25;
+  --sw-leading-snug: 1.375;
+  --sw-leading-normal: 1.5;
+  --sw-leading-relaxed: 1.625;
+
+  /* ==========================================================================
+     SPACING
+     ========================================================================== */
+
+  --sw-space-1: 4px;
+  --sw-space-2: 8px;
+  --sw-space-3: 12px;
+  --sw-space-4: 16px;
+  --sw-space-5: 20px;
+  --sw-space-6: 24px;
+  --sw-space-8: 32px;
+  --sw-space-10: 40px;
+  --sw-space-12: 48px;
+
+  /* ==========================================================================
+     BORDER RADIUS
+     ========================================================================== */
+
+  --sw-radius-sm: 4px;
+  --sw-radius-md: 6px;
+  --sw-radius-lg: 8px;
+  --sw-radius-xl: 10px;
+  --sw-radius-2xl: 12px;
+  --sw-radius-3xl: 16px;
+  --sw-radius-full: 9999px;
+
+  /* ==========================================================================
+     SHADOWS
+     ========================================================================== */
+
+  --sw-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --sw-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 25px rgba(0, 0, 0, 0.05);
+  --sw-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  --sw-shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
+
+  /* ==========================================================================
+     TRANSITIONS
+     ========================================================================== */
+
+  --sw-transition-fast: 0.15s ease;
+  --sw-transition-normal: 0.2s ease;
+  --sw-transition-slow: 0.3s ease;
+  --sw-transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ==========================================================================
+     Z-INDEX SCALE
+     ========================================================================== */
+
+  --sw-z-base: 1;
+  --sw-z-dropdown: 10;
+  --sw-z-sticky: 20;
+  --sw-z-overlay: 100;
+  --sw-z-modal: 200;
+  --sw-z-toast: 300;
+}
+
+/* ==========================================================================
+   DARK MODE
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /* Background Colors */
+  --sw-bg-page: #0a0a0a;
+  --sw-bg-card: #18181b;
+  --sw-bg-elevated: #27272a;
+  --sw-bg-input: #27272a;
+  --sw-bg-input-focus: #3f3f46;
+  --sw-bg-hover: #27272a;
+  --sw-bg-selected: #27272a;
+
+  /* Text Colors */
+  --sw-text-primary: #fafafa;
+  --sw-text-secondary: #a1a1aa;
+  --sw-text-tertiary: #71717a;
+  --sw-text-muted: #52525b;
+  --sw-text-inverse: #0a0a0a;
+
+  /* Border Colors */
+  --sw-border-default: #3f3f46;
+  --sw-border-hover: #52525b;
+  --sw-border-focus: #fafafa;
+  --sw-border-selected: #fafafa;
+
+  /* Primary (inverted for dark) */
+  --sw-primary: #fafafa;
+  --sw-primary-hover: #e4e4e7;
+  --sw-primary-active: #d4d4d8;
+
+  /* Semantic backgrounds (darker) */
+  --sw-success-bg: #052e16;
+  --sw-warning-bg: #431407;
+  --sw-danger-bg: #450a0a;
+  --sw-accent-bg: #1e3a5f;
+}

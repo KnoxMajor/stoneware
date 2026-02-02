@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Layouts">
+  <h1>Layouts</h1>
+  <p>Common page layout patterns.</p>
+
+  <h2>Sidebar + Main</h2>
+  <p>Classic app layout with fixed sidebar.</p>
+  <pre><code set:html={`&lt;div class="sw-layout-with-sidebar"&gt;
+  &lt;aside class="sw-sidebar"&gt;
+    &lt;div class="sw-sidebar-header"&gt;App Name&lt;/div&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/aside&gt;
+  &lt;main class="sw-main"&gt;
+    &lt;!-- Page content --&gt;
+  &lt;/main&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Centered Card</h2>
+  <p>For auth pages, onboarding, and single-focus views.</p>
+  <div class="preview" style="background: var(--sw-bg-page); min-height: 300px; display: flex; align-items: center; justify-content: center;">
+    <div class="sw-card" style="max-width: 360px; width: 100%; text-align: center;">
+      <div class="sw-card-body">
+        <h3 style="font-size: 20px; font-weight: 600; margin-bottom: 8px;">Welcome Back</h3>
+        <p style="color: var(--sw-text-secondary); margin-bottom: 24px; font-size: 14px;">Sign in to your account</p>
+        <div style="text-align: left;">
+          <input type="email" class="sw-input" placeholder="Email" style="margin-bottom: 12px;">
+          <input type="password" class="sw-input" placeholder="Password" style="margin-bottom: 20px;">
+          <button class="sw-btn sw-btn-primary" style="width: 100%;">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-layout-with-sidebar {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sw-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--sw-bg-card);
+  border-right: 1px solid var(--sw-border-default);
+}
+
+.sw-main {
+  flex: 1;
+  background: var(--sw-bg-page);
+  padding: var(--sw-space-10);
+}
+
+.sw-layout-centered {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sw-space-6);
+  background: var(--sw-bg-page);
+}`}></code></pre>
+</BaseLayout>

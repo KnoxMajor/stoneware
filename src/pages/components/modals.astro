@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Modals">
+  <h1>Modals</h1>
+  <p>Dialog overlays for focused interactions.</p>
+
+  <h2>Basic Modal</h2>
+  <div class="preview" style="background: var(--sw-gray-100); min-height: 300px; display: flex; align-items: center; justify-content: center;">
+    <div class="sw-card" style="max-width: 400px; width: 100%;">
+      <div class="sw-card-header">
+        <h4 class="sw-card-title">Confirm Action</h4>
+      </div>
+      <div class="sw-card-body">
+        <p style="margin: 0; color: var(--sw-text-secondary);">Are you sure you want to proceed? This action cannot be undone.</p>
+      </div>
+      <div class="sw-card-footer">
+        <button class="sw-btn sw-btn-ghost">Cancel</button>
+        <button class="sw-btn sw-btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Danger Modal</h2>
+  <div class="preview" style="background: var(--sw-gray-100); min-height: 300px; display: flex; align-items: center; justify-content: center;">
+    <div class="sw-card" style="max-width: 400px; width: 100%;">
+      <div class="sw-card-header">
+        <h4 class="sw-card-title">Delete Item</h4>
+      </div>
+      <div class="sw-card-body">
+        <p style="margin: 0; color: var(--sw-text-secondary);">This will permanently delete the item. This action cannot be undone.</p>
+      </div>
+      <div class="sw-card-footer">
+        <button class="sw-btn sw-btn-ghost">Cancel</button>
+        <button class="sw-btn sw-btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Structure</h2>
+  <pre><code set:html={`&lt;div class="sw-modal-overlay"&gt;
+  &lt;div class="sw-card"&gt;
+    &lt;div class="sw-card-header"&gt;
+      &lt;h4 class="sw-card-title"&gt;Modal Title&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-card-body"&gt;
+      &lt;p&gt;Modal content&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="sw-card-footer"&gt;
+      &lt;button class="sw-btn sw-btn-ghost"&gt;Cancel&lt;/button&gt;
+      &lt;button class="sw-btn sw-btn-primary"&gt;Confirm&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Overlay CSS</h2>
+  <pre><code set:html={`.sw-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sw-space-6);
+  z-index: var(--sw-z-modal);
+}`}></code></pre>
+</BaseLayout>

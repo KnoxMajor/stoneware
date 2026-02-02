@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Spacing">
+  <h1>Spacing</h1>
+  <p>Consistent spacing scale based on 4px increments.</p>
+
+  <h2>Scale</h2>
+  <div class="spacing-scale">
+    <div class="spacing-row">
+      <span class="spacing-name">space-1</span>
+      <div class="spacing-bar" style="width: 4px;"></div>
+      <span class="spacing-value">4px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-2</span>
+      <div class="spacing-bar" style="width: 8px;"></div>
+      <span class="spacing-value">8px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-3</span>
+      <div class="spacing-bar" style="width: 12px;"></div>
+      <span class="spacing-value">12px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-4</span>
+      <div class="spacing-bar" style="width: 16px;"></div>
+      <span class="spacing-value">16px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-5</span>
+      <div class="spacing-bar" style="width: 20px;"></div>
+      <span class="spacing-value">20px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-6</span>
+      <div class="spacing-bar" style="width: 24px;"></div>
+      <span class="spacing-value">24px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-8</span>
+      <div class="spacing-bar" style="width: 32px;"></div>
+      <span class="spacing-value">32px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-10</span>
+      <div class="spacing-bar" style="width: 40px;"></div>
+      <span class="spacing-value">40px</span>
+    </div>
+    <div class="spacing-row">
+      <span class="spacing-name">space-12</span>
+      <div class="spacing-bar" style="width: 48px;"></div>
+      <span class="spacing-value">48px</span>
+    </div>
+  </div>
+
+  <h2>Usage Guidelines</h2>
+  <table>
+    <thead>
+      <tr><th>Context</th><th>Spacing</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Label to input</td><td>space-1 (4px)</td></tr>
+      <tr><td>Between form fields</td><td>space-4 (16px)</td></tr>
+      <tr><td>Card padding</td><td>space-5 to space-6 (20-24px)</td></tr>
+      <tr><td>Section spacing</td><td>space-8 to space-10 (32-40px)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Usage</h2>
+  <pre><code set:html={`.my-card {
+  padding: var(--sw-space-6);
+  gap: var(--sw-space-4);
+  margin-bottom: var(--sw-space-8);
+}`}></code></pre>
+</BaseLayout>
+
+<style>
+  .spacing-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .spacing-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .spacing-name {
+    width: 80px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sw-text-secondary);
+  }
+  .spacing-bar {
+    height: 24px;
+    background: var(--sw-primary);
+    border-radius: 4px;
+  }
+  .spacing-value {
+    font-size: 12px;
+    color: var(--sw-text-muted);
+  }
+</style>

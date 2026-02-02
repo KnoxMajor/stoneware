@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Inputs">
+  <h1>Inputs</h1>
+  <p>Form controls for text entry and selection.</p>
+
+  <h2>Text Input</h2>
+  <div class="preview">
+    <input type="text" class="sw-input" placeholder="Enter text..." style="max-width: 300px;">
+  </div>
+  <pre><code set:html={`&lt;input type="text" class="sw-input" placeholder="Enter text..."&gt;`}></code></pre>
+
+  <h2>With Label</h2>
+  <div class="preview">
+    <div style="max-width: 300px;">
+      <label class="sw-label">Email Address</label>
+      <input type="email" class="sw-input" placeholder="you@example.com">
+    </div>
+  </div>
+  <pre><code set:html={`&lt;label class="sw-label"&gt;Email Address&lt;/label&gt;
+&lt;input type="email" class="sw-input" placeholder="you@example.com"&gt;`}></code></pre>
+
+  <h2>Input Group</h2>
+  <p>Combine input with icons or buttons.</p>
+  <div class="preview">
+    <div class="sw-input-group" style="max-width: 300px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input type="text" class="sw-input" placeholder="Search...">
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-input-group"&gt;
+  &lt;svg&gt;...&lt;/svg&gt;
+  &lt;input type="text" class="sw-input" placeholder="Search..."&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Textarea</h2>
+  <div class="preview">
+    <textarea class="sw-textarea" placeholder="Enter description..." style="max-width: 400px;"></textarea>
+  </div>
+  <pre><code set:html={`&lt;textarea class="sw-textarea" placeholder="Enter description..."&gt;&lt;/textarea&gt;`}></code></pre>
+
+  <h2>Select</h2>
+  <div class="preview">
+    <select class="sw-select" style="max-width: 200px;">
+      <option>Select option...</option>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+  </div>
+  <pre><code set:html={`&lt;select class="sw-select"&gt;
+  &lt;option&gt;Select option...&lt;/option&gt;
+  &lt;option&gt;Option 1&lt;/option&gt;
+&lt;/select&gt;`}></code></pre>
+
+  <h2>Checkbox</h2>
+  <div class="preview">
+    <label class="sw-checkbox">
+      <input type="checkbox">
+      <span>Remember me</span>
+    </label>
+  </div>
+  <pre><code set:html={`&lt;label class="sw-checkbox"&gt;
+  &lt;input type="checkbox"&gt;
+  &lt;span&gt;Remember me&lt;/span&gt;
+&lt;/label&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--sw-bg-input);
+  border: 1.5px solid var(--sw-border-default);
+  border-radius: var(--sw-radius-lg);
+  font-family: var(--sw-font-family);
+  font-size: var(--sw-text-md);
+  color: var(--sw-text-primary);
+  transition: all var(--sw-transition-fast);
+}
+
+.sw-input:focus {
+  outline: none;
+  background: var(--sw-bg-input-focus);
+  border-color: var(--sw-border-focus);
+}
+
+.sw-input::placeholder {
+  color: var(--sw-text-muted);
+}
+
+.sw-label {
+  display: block;
+  font-size: var(--sw-text-xs);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--sw-space-1);
+}
+
+.sw-input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--sw-space-2);
+  padding: 0 var(--sw-space-3);
+  background: var(--sw-bg-input);
+  border: 1.5px solid var(--sw-border-default);
+  border-radius: var(--sw-radius-lg);
+}
+
+.sw-input-group .sw-input {
+  border: none;
+  padding-left: 0;
+  background: transparent;
+}`}></code></pre>
+</BaseLayout>

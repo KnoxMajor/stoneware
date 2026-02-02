@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Introduction">
+  <h1>Introduction</h1>
+  <p>A minimal, dark-accent design system inspired by modern SaaS interfaces like Clerk.com.</p>
+
+  <h2>What is Stoneware?</h2>
+  <p>Stoneware is a CSS-first design system that provides everything you need to build clean, professional interfaces. It includes:</p>
+  <ul>
+    <li><strong>Design Tokens</strong> - CSS custom properties for colors, typography, spacing, shadows, and more</li>
+    <li><strong>Component Classes</strong> - Pre-built styles for buttons, inputs, cards, modals, and other UI elements</li>
+    <li><strong>Utility Classes</strong> - Helpers for layout, spacing, and common patterns</li>
+    <li><strong>Dark Mode</strong> - Full dark mode support via <code>data-theme="dark"</code></li>
+  </ul>
+
+  <h2>Design Philosophy</h2>
+  <p>Stoneware follows these core principles:</p>
+
+  <h3>Minimal & Clean</h3>
+  <p>Remove visual noise. Embrace generous whitespace. Let content breathe.</p>
+
+  <h3>Dark Accents</h3>
+  <p>Primary actions use near-black (<code>#18181b</code>), not bright colors. This creates a sophisticated, professional look.</p>
+
+  <h3>Subtle Shadows</h3>
+  <p>Light, layered shadows create depth without distraction. Cards feel elevated but not heavy.</p>
+
+  <h3>Smooth Transitions</h3>
+  <p>0.15s-0.3s eases for micro-interactions. Fast enough to feel responsive, slow enough to notice.</p>
+
+  <h3>Consistent Spacing</h3>
+  <p>4px/8px grid system throughout. Every measurement is intentional.</p>
+
+  <h2>Quick Example</h2>
+
+  <div class="preview">
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <button class="sw-btn sw-btn-primary">Primary Action</button>
+      <button class="sw-btn sw-btn-secondary">Secondary</button>
+      <button class="sw-btn sw-btn-ghost">Ghost</button>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;button class="sw-btn sw-btn-primary"&gt;Primary Action&lt;/button&gt;
+&lt;button class="sw-btn sw-btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="sw-btn sw-btn-ghost"&gt;Ghost&lt;/button&gt;`}></code></pre>
+
+  <h2>Next Steps</h2>
+  <ul>
+    <li><a href="/getting-started/installation">Installation</a> - Get Stoneware into your project</li>
+    <li><a href="/foundations/colors">Colors</a> - Explore the color palette</li>
+    <li><a href="/components/buttons">Buttons</a> - Start building with components</li>
+  </ul>
+</BaseLayout>

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Banners">
+  <h1>Banners</h1>
+  <p>Alert messages and notifications.</p>
+
+  <h2>Success Banner</h2>
+  <div class="preview">
+    <div class="sw-banner sw-banner-success">
+      <span class="sw-banner-text">Your changes have been saved successfully.</span>
+      <button class="sw-btn sw-btn-ghost sw-btn-sm">Dismiss</button>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-banner sw-banner-success"&gt;
+  &lt;span class="sw-banner-text"&gt;Your changes have been saved.&lt;/span&gt;
+  &lt;button class="sw-btn sw-btn-ghost sw-btn-sm"&gt;Dismiss&lt;/button&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Warning Banner</h2>
+  <div class="preview">
+    <div class="sw-banner sw-banner-warning">
+      <span class="sw-banner-text">Your trial expires in 3 days.</span>
+      <button class="sw-btn sw-btn-ghost sw-btn-sm">Upgrade</button>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-banner sw-banner-warning"&gt;...&lt;/div&gt;`}></code></pre>
+
+  <h2>Danger Banner</h2>
+  <div class="preview">
+    <div class="sw-banner sw-banner-danger">
+      <span class="sw-banner-text">There was an error processing your request.</span>
+      <button class="sw-btn sw-btn-ghost sw-btn-sm">Retry</button>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-banner sw-banner-danger"&gt;...&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sw-space-3);
+  padding: var(--sw-space-3) var(--sw-space-4);
+  border-radius: var(--sw-radius-lg);
+}
+
+.sw-banner-success {
+  background: var(--sw-success-bg);
+  border: 1px solid var(--sw-success-border);
+}
+
+.sw-banner-success .sw-banner-text {
+  color: var(--sw-success);
+}
+
+.sw-banner-warning {
+  background: var(--sw-warning-bg);
+  border: 1px solid var(--sw-warning-border);
+}
+
+.sw-banner-warning .sw-banner-text {
+  color: var(--sw-warning-text);
+}
+
+.sw-banner-danger {
+  background: var(--sw-danger-bg);
+  border: 1px solid var(--sw-danger-border);
+}
+
+.sw-banner-danger .sw-banner-text {
+  color: var(--sw-danger);
+}
+
+.sw-banner-text {
+  font-size: var(--sw-text-md);
+  font-weight: var(--sw-font-medium);
+}`}></code></pre>
+</BaseLayout>

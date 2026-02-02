@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Avatars">
+  <h1>Avatars</h1>
+  <p>User profile images and initials.</p>
+
+  <h2>Sizes</h2>
+  <div class="preview">
+    <div class="preview-row">
+      <div class="sw-avatar sw-avatar-lg">JD</div>
+      <div class="sw-avatar">AB</div>
+      <div class="sw-avatar sw-avatar-sm">XY</div>
+      <div class="sw-avatar sw-avatar-xs">Z</div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-avatar sw-avatar-lg"&gt;JD&lt;/div&gt;  &lt;!-- 56px --&gt;
+&lt;div class="sw-avatar"&gt;AB&lt;/div&gt;              &lt;!-- 40px (default) --&gt;
+&lt;div class="sw-avatar sw-avatar-sm"&gt;XY&lt;/div&gt;  &lt;!-- 32px --&gt;
+&lt;div class="sw-avatar sw-avatar-xs"&gt;Z&lt;/div&gt;   &lt;!-- 24px --&gt;`}></code></pre>
+
+  <h2>Avatar Group</h2>
+  <div class="preview">
+    <div class="sw-avatar-group">
+      <div class="sw-avatar">AB</div>
+      <div class="sw-avatar">CD</div>
+      <div class="sw-avatar">EF</div>
+      <div class="sw-avatar">+3</div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-avatar-group"&gt;
+  &lt;div class="sw-avatar"&gt;AB&lt;/div&gt;
+  &lt;div class="sw-avatar"&gt;CD&lt;/div&gt;
+  &lt;div class="sw-avatar"&gt;EF&lt;/div&gt;
+  &lt;div class="sw-avatar"&gt;+3&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--sw-radius-full);
+  background: linear-gradient(135deg, var(--sw-gray-200), var(--sw-gray-300));
+  font-size: var(--sw-text-md);
+  font-weight: var(--sw-font-medium);
+  color: var(--sw-text-secondary);
+}
+
+.sw-avatar-lg { width: 56px; height: 56px; font-size: var(--sw-text-xl); }
+.sw-avatar-sm { width: 32px; height: 32px; font-size: var(--sw-text-sm); }
+.sw-avatar-xs { width: 24px; height: 24px; font-size: 10px; }
+
+.sw-avatar-group {
+  display: flex;
+}
+
+.sw-avatar-group .sw-avatar {
+  margin-left: -8px;
+  border: 2px solid var(--sw-bg-card);
+}
+
+.sw-avatar-group .sw-avatar:first-child {
+  margin-left: 0;
+}`}></code></pre>
+</BaseLayout>

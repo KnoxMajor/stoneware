@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
+&lt;link rel="stylesheet" href="stoneware.css"&gt;
+
+&lt;!-- Start using components --&gt;
+&lt;button class="sw-btn sw-btn-primary"&gt;Get Started&lt;/button&gt;`;
+---
+
+<BaseLayout title="Home">
+  <div class="hero">
+    <h1>Stoneware</h1>
+    <p class="hero-tagline">A minimal, dark-accent design system. Drop in one CSS file and transform your UI instantly.</p>
+    <div class="hero-actions">
+      <a href="/getting-started/introduction" class="sw-btn sw-btn-primary">Get Started</a>
+      <a href="/download" class="sw-btn sw-btn-secondary">Download CSS</a>
+    </div>
+  </div>
+
+  <h2>Live Components</h2>
+
+  <div class="showcase-grid">
+    <div class="showcase-section">
+      <h4 class="showcase-title">Buttons</h4>
+      <div class="preview-row">
+        <button class="sw-btn sw-btn-primary">Primary</button>
+        <button class="sw-btn sw-btn-secondary">Secondary</button>
+        <button class="sw-btn sw-btn-danger">Danger</button>
+        <button class="sw-btn sw-btn-ghost">Ghost</button>
+      </div>
+    </div>
+
+    <div class="showcase-section">
+      <h4 class="showcase-title">Inputs</h4>
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 280px;">
+        <input type="text" class="sw-input" placeholder="Text input..." />
+        <div class="sw-input-group">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input type="text" class="sw-input" placeholder="Search..." />
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase-section">
+      <h4 class="showcase-title">Tags</h4>
+      <div class="preview-row">
+        <span class="sw-tag">Default</span>
+        <span class="sw-tag sw-tag-success">Success</span>
+        <span class="sw-tag sw-tag-warning">Warning</span>
+        <span class="sw-tag sw-tag-danger">Danger</span>
+      </div>
+    </div>
+
+    <div class="showcase-section">
+      <h4 class="showcase-title">Avatars</h4>
+      <div class="preview-row">
+        <div class="sw-avatar sw-avatar-lg">JD</div>
+        <div class="sw-avatar">AB</div>
+        <div class="sw-avatar sw-avatar-sm">XY</div>
+        <div class="sw-avatar sw-avatar-xs">Z</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-showcase">
+    <div class="sw-card">
+      <div class="sw-card-header">
+        <h4 class="sw-card-title">Standard Card</h4>
+        <p class="sw-card-subtitle">With header, content, and footer</p>
+      </div>
+      <div class="sw-card-body">
+        <p>Cards are versatile containers for grouping related content. They support headers, footers, and various content types.</p>
+      </div>
+      <div class="sw-card-footer">
+        <button class="sw-btn sw-btn-ghost">Cancel</button>
+        <button class="sw-btn sw-btn-primary">Save</button>
+      </div>
+    </div>
+
+    <div class="sw-card sw-card-bordered">
+      <div class="sw-card-body">
+        <div class="sw-field-grid">
+          <div class="sw-field">
+            <span class="sw-field-label">Name</span>
+            <span class="sw-field-value">Jane Smith</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Role</span>
+            <span class="sw-field-value">Designer</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Status</span>
+            <span class="sw-tag sw-tag-success">Active</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Location</span>
+            <span class="sw-field-value">San Francisco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Quick Start</h2>
+  <pre><code set:html={quickStartCode}></code></pre>
+
+  <h2>Three Ways to Use</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>File</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Full Bundle</strong></td>
+        <td><code>stoneware.css</code></td>
+        <td>New projects, complete UI transformation</td>
+      </tr>
+      <tr>
+        <td><strong>Tokens Only</strong></td>
+        <td><code>stoneware-tokens.css</code></td>
+        <td>Building custom components with our design language</td>
+      </tr>
+      <tr>
+        <td><strong>Individual Snippets</strong></td>
+        <td>Copy from docs</td>
+        <td>Adding specific components to existing projects</td>
+      </tr>
+    </tbody>
+  </table>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: var(--sw-space-8) 0 var(--sw-space-12);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: var(--sw-space-4);
+  }
+
+  .hero-tagline {
+    font-size: var(--sw-text-xl) !important;
+    color: var(--sw-text-secondary);
+    max-width: 500px;
+    margin: 0 auto var(--sw-space-8) !important;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--sw-space-4);
+    justify-content: center;
+  }
+
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sw-space-6);
+    background: var(--sw-bg-page);
+    border: 1px solid var(--sw-border-default);
+    border-radius: var(--sw-radius-xl);
+    padding: var(--sw-space-6);
+    margin-bottom: var(--sw-space-6);
+  }
+
+  @media (max-width: 640px) {
+    .showcase-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .showcase-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sw-space-3);
+  }
+
+  .showcase-title {
+    font-size: var(--sw-text-xs) !important;
+    font-weight: var(--sw-font-semibold);
+    color: var(--sw-text-muted) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .card-showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sw-space-6);
+    margin-bottom: var(--sw-space-8);
+  }
+
+  @media (max-width: 700px) {
+    .card-showcase {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .sw-card-body p {
+    margin: 0;
+    font-size: var(--sw-text-md);
+    color: var(--sw-text-secondary);
+  }
+</style>
