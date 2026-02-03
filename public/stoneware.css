@@ -374,7 +374,7 @@ small {
 /* Danger Button */
 .sw-btn-danger {
   background: var(--sw-danger);
-  color: var(--sw-text-inverse);
+  color: var(--sw-gray-50);
 }
 
 .sw-btn-danger:hover:not(:disabled) {
