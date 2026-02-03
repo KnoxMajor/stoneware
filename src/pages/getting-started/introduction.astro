@@ -5,7 +5,7 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout title="Introduction">
   <h1>Introduction</h1>
-  <p>A minimal, dark-accent design system inspired by modern SaaS interfaces like Clerk.com.</p>
+  <p>Form and function</p>
 
   <h2>What is Stoneware?</h2>
   <p>Stoneware is a CSS-first design system that provides everything you need to build clean, professional interfaces. It includes:</p>
@@ -20,16 +20,16 @@ const base = import.meta.env.BASE_URL;
   <p>Stoneware follows these core principles:</p>
 
   <h3>Clean</h3>
-  <p>Remove visual noise and embrace generous whitespace. Let everything breathe.</p>
+  <p>Remove visual noise by using less color and padding on the elements themselves. Let everything breathe by giving them space, not by making them bigger.</p>
 
   <h3>Dark Accents</h3>
-  <p>Primary actions use near-black (<code>#18181b</code>), not bright colors.
+  <p>Primary actions use near-black (<code>#18181b</code>), not bright colors. Colors are for semantics
 
   <h3>Subtle Shadows</h3>
   <p>Please don't use these, but if you need them they are light and they create depth without distraction.</p>
 
   <h3>Smooth Transitions</h3>
-  <p>Nothing too fancy. Less is more</p>
+  <p>Less is more.</p>
 
   <h2>Quick Example</h2>
 
@@ -47,8 +47,8 @@ const base = import.meta.env.BASE_URL;
 
   <h2>Next Steps</h2>
   <ul>
-    <li><a href={`${base}getting-started/installation`}>Installation</a> - Get Stoneware into your project</li>
-    <li><a href={`${base}foundations/colors`}>Colors</a> - Explore the color palette</li>
-    <li><a href={`${base}components/buttons`}>Buttons</a> - Start building with components</li>
+    <li><a class="sw-btn sw-btn-ghost" href={`${base}getting-started/installation`}>Installation - Get Stoneware into your project</a></li>
+    <li><a class="sw-btn sw-btn-ghost" href={`${base}foundations/colors`}>Colors - Explore the color palette</a></li>
+    <li><a class="sw-btn sw-btn-ghost" href={`${base}components/buttons`}>Buttons - Start building with components</a></li>
   </ul>
 </BaseLayout>
