@@ -3,5 +3,5 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
 	site: 'https://knoxmajor.github.io',
-	base: '/stoneware',
+	base: process.env.CI ? '/stoneware' : '/',
 });
