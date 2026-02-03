@@ -1031,10 +1031,16 @@ small {
    ========================================================================== */
 
 .sw-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: var(--sw-radius-full);
   background: linear-gradient(135deg, var(--sw-gray-200) 0%, var(--sw-gray-300) 100%);
+  font-size: var(--sw-text-sm);
+  font-weight: var(--sw-font-medium);
+  color: var(--sw-text-secondary);
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -1058,6 +1064,19 @@ small {
 .sw-avatar-lg {
   width: 56px;
   height: 56px;
+}
+
+.sw-avatar-group {
+  display: flex;
+}
+
+.sw-avatar-group .sw-avatar {
+  margin-left: -14px;
+  border: 2px solid var(--sw-bg-card);
+}
+
+.sw-avatar-group .sw-avatar:first-child {
+  margin-left: 0;
 }
 
 
