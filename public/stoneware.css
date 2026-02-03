@@ -835,6 +835,11 @@ small {
   border-color: var(--sw-border-default);
 }
 
+.sw-list-item.active {
+  background: var(--sw-bg-subtle);
+  border-color: var(--sw-text-tertiary);
+}
+
 .sw-list-item:last-child {
   margin-bottom: 0;
 }
