@@ -90,6 +90,14 @@ const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
             <span class="sw-field-label">Location</span>
             <span class="sw-field-value">San Francisco</span>
           </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Qty</span>
+            <span class="sw-field-value">243032</span>
+          </div>
+          <div class="sw-field">
+            <span class="sw-field-label">Segment</span>
+            <span class="sw-field-value">da_020_dp_acr</span>
+          </div>
         </div>
       </div>
     </div>
@@ -186,16 +194,14 @@ const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
   }
 
   .card-showcase {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    align-items: flex-start;
     gap: var(--sw-space-6);
     margin-bottom: var(--sw-space-8);
+    flex-wrap: wrap;
   }
-
-  @media (max-width: 700px) {
-    .card-showcase {
-      grid-template-columns: 1fr;
-    }
+  .card-showcase > .sw-card{
+    width: calc(50% - (var(--sw-space-6) / 2))
   }
 
   .sw-card-body p {
