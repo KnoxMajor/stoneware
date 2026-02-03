@@ -1,49 +1,40 @@
-# Starlight Starter Kit: Basics
+# Stoneware
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+A beauty-in-simplicity and contrast-in-subtlety CSS design system. One file, dark mode included.
 
-```
-npm create astro@latest -- --template starlight
-```
+## Use it
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Download `stoneware.css` and add it to your project:
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+```html
+<link rel="stylesheet" href="stoneware.css">
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+That's it. Your page now has:
+- A clean reset
+- Nice typography
+- Dark mode (add `data-theme="dark"` to `<html>`)
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## Components
 
-Static assets, like favicons, can be placed in the `public/` directory.
+Everything is prefixed with `sw-`:
 
-## 🧞 Commands
+```html
+<button class="sw-btn sw-btn-primary">Save</button>
+<input class="sw-input" placeholder="Type here...">
+<div class="sw-card">Card content</div>
+<span class="sw-tag">Label</span>
+```
 
-All commands are run from the root of the project, from a terminal:
+## Just want the tokens?
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Use `stoneware-tokens.css` for only the CSS variables. Build your own components with our colors, spacing, and typography.
 
-## 👀 Want to learn more?
+## Dev
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+```
+npm install
+npm run dev
+```
+
+Docs site runs at `localhost:4321`.
