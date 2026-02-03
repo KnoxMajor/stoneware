@@ -7,7 +7,7 @@
  */
 
 /* ==========================================================================
-   1. CSS RESET (Minimal, Opinionated)
+   1. CSS RESET
    ========================================================================== */
 
 *, *::before, *::after {
@@ -381,11 +381,10 @@ small {
   background: var(--sw-danger-hover);
 }
 
-/* Ghost Button (Minimal) */
+/* Ghost Button */
 .sw-btn-ghost {
   background: transparent;
   color: var(--sw-text-secondary);
-  padding: 8px 12px;
 }
 
 .sw-btn-ghost:hover:not(:disabled) {
