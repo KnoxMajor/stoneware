@@ -567,7 +567,6 @@ small {
 .sw-card {
   background: var(--sw-bg-card);
   border-radius: var(--sw-radius-2xl);
-  box-shadow: var(--sw-shadow-md);
   overflow: hidden;
 }
 
@@ -577,7 +576,7 @@ small {
 }
 
 .sw-card-elevated {
-  box-shadow: var(--sw-shadow-lg);
+  box-shadow: var(--sw-shadow-sm);
 }
 
 .sw-card-title {
