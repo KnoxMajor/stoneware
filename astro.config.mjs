@@ -2,5 +2,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-	// Basic Astro config - no Starlight
+	site: 'https://knoxmajor.github.io',
+	base: '/stoneware',
 });
