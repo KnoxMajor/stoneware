@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Installation">
@@ -9,7 +10,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <h2>Option 1: Full Bundle</h2>
   <p>Download the complete package and drop it into your project.</p>
 
-  <a href="/stoneware.css" download class="sw-btn sw-btn-primary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+  <a href={`${base}stoneware.css`} download class="sw-btn sw-btn-primary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
     Download stoneware.css
   </a>
 
@@ -30,7 +31,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <h2>Option 2: Tokens Only</h2>
   <p>Just the CSS custom properties for building your own components.</p>
 
-  <a href="/stoneware-tokens.css" download class="sw-btn sw-btn-secondary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+  <a href={`${base}stoneware-tokens.css`} download class="sw-btn sw-btn-secondary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
     Download stoneware-tokens.css
   </a>
 

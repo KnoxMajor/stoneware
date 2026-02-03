@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { title, description = 'A minimal, dark-accent design system' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ const { title, description = 'A minimal, dark-accent design system' } = Astro.pr
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content={description}>
   <title>{title} | Stoneware</title>
-  <link rel="stylesheet" href="/stoneware.css">
+  <link rel="stylesheet" href={`${import.meta.env.BASE_URL}stoneware.css`}>
   <style is:global>
     /* Site-specific styles */
     body {
@@ -301,57 +302,57 @@ const { title, description = 'A minimal, dark-accent design system' } = Astro.pr
 <body>
   <div class="site-wrapper">
     <aside class="sidebar">
-      <a href="/" class="sidebar-logo">Stoneware</a>
+      <a href={base} class="sidebar-logo">Stoneware</a>
       <nav class="sidebar-nav">
         <div class="nav-group">
           <div class="nav-group-title">Getting Started</div>
           <div class="nav-group-links">
-            <a href="/getting-started/introduction" class="nav-link">Introduction</a>
-            <a href="/getting-started/installation" class="nav-link">Installation</a>
-            <a href="/getting-started/design-principles" class="nav-link">Design Principles</a>
+            <a href={`${base}getting-started/introduction`} class="nav-link">Introduction</a>
+            <a href={`${base}getting-started/installation`} class="nav-link">Installation</a>
+            <a href={`${base}getting-started/design-principles`} class="nav-link">Design Principles</a>
           </div>
         </div>
 
         <div class="nav-group">
           <div class="nav-group-title">Foundations</div>
           <div class="nav-group-links">
-            <a href="/foundations/colors" class="nav-link">Colors</a>
-            <a href="/foundations/typography" class="nav-link">Typography</a>
-            <a href="/foundations/spacing" class="nav-link">Spacing</a>
-            <a href="/foundations/shadows" class="nav-link">Shadows</a>
-            <a href="/foundations/transitions" class="nav-link">Transitions</a>
+            <a href={`${base}foundations/colors`} class="nav-link">Colors</a>
+            <a href={`${base}foundations/typography`} class="nav-link">Typography</a>
+            <a href={`${base}foundations/spacing`} class="nav-link">Spacing</a>
+            <a href={`${base}foundations/shadows`} class="nav-link">Shadows</a>
+            <a href={`${base}foundations/transitions`} class="nav-link">Transitions</a>
           </div>
         </div>
 
         <div class="nav-group">
           <div class="nav-group-title">Components</div>
           <div class="nav-group-links">
-            <a href="/components/buttons" class="nav-link">Buttons</a>
-            <a href="/components/inputs" class="nav-link">Inputs</a>
-            <a href="/components/cards" class="nav-link">Cards</a>
-            <a href="/components/lists" class="nav-link">Lists</a>
-            <a href="/components/modals" class="nav-link">Modals</a>
-            <a href="/components/navigation" class="nav-link">Navigation</a>
-            <a href="/components/chips-tags" class="nav-link">Chips & Tags</a>
-            <a href="/components/progress" class="nav-link">Progress</a>
-            <a href="/components/banners" class="nav-link">Banners</a>
-            <a href="/components/avatars" class="nav-link">Avatars</a>
-            <a href="/components/forms" class="nav-link">Forms</a>
+            <a href={`${base}components/buttons`} class="nav-link">Buttons</a>
+            <a href={`${base}components/inputs`} class="nav-link">Inputs</a>
+            <a href={`${base}components/cards`} class="nav-link">Cards</a>
+            <a href={`${base}components/lists`} class="nav-link">Lists</a>
+            <a href={`${base}components/modals`} class="nav-link">Modals</a>
+            <a href={`${base}components/navigation`} class="nav-link">Navigation</a>
+            <a href={`${base}components/chips-tags`} class="nav-link">Chips & Tags</a>
+            <a href={`${base}components/progress`} class="nav-link">Progress</a>
+            <a href={`${base}components/banners`} class="nav-link">Banners</a>
+            <a href={`${base}components/avatars`} class="nav-link">Avatars</a>
+            <a href={`${base}components/forms`} class="nav-link">Forms</a>
           </div>
         </div>
 
         <div class="nav-group">
           <div class="nav-group-title">Patterns</div>
           <div class="nav-group-links">
-            <a href="/patterns/layouts" class="nav-link">Layouts</a>
-            <a href="/patterns/data-display" class="nav-link">Data Display</a>
+            <a href={`${base}patterns/layouts`} class="nav-link">Layouts</a>
+            <a href={`${base}patterns/data-display`} class="nav-link">Data Display</a>
           </div>
         </div>
 
         <div class="nav-group">
           <div class="nav-group-title">Resources</div>
           <div class="nav-group-links">
-            <a href="/download" class="nav-link">Download</a>
+            <a href={`${base}download`} class="nav-link">Download</a>
           </div>
         </div>
       </nav>

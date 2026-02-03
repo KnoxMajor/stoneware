@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="Download">
@@ -9,7 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <h2>Full Bundle</h2>
   <p>The complete Stoneware package: reset, tokens, components, and utilities.</p>
 
-  <a href="/stoneware.css" download class="sw-btn sw-btn-primary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+  <a href={`${base}stoneware.css`} download class="sw-btn sw-btn-primary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
     Download stoneware.css
   </a>
 
@@ -30,7 +31,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <h2>Tokens Only</h2>
   <p>Just the CSS custom properties for building your own components.</p>
 
-  <a href="/stoneware-tokens.css" download class="sw-btn sw-btn-secondary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
+  <a href={`${base}stoneware-tokens.css`} download class="sw-btn sw-btn-secondary" style="margin-bottom: var(--sw-space-4); display: inline-block;">
     Download stoneware-tokens.css
   </a>
 
@@ -58,10 +59,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   <p>Browse components:</p>
   <ul>
-    <li><a href="/components/buttons">Buttons</a></li>
-    <li><a href="/components/inputs">Inputs</a></li>
-    <li><a href="/components/cards">Cards</a></li>
-    <li><a href="/components/lists">Lists</a></li>
+    <li><a href={`${base}components/buttons`}>Buttons</a></li>
+    <li><a href={`${base}components/inputs`}>Inputs</a></li>
+    <li><a href={`${base}components/cards`}>Cards</a></li>
+    <li><a href={`${base}components/lists`}>Lists</a></li>
   </ul>
 
   <hr>

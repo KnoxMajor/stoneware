@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL;
 
 const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
 &lt;link rel="stylesheet" href="stoneware.css"&gt;
@@ -13,8 +14,8 @@ const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
     <h1>Stoneware</h1>
     <p class="hero-tagline">A minimal, dark-accent design system. Drop in one CSS file and transform your UI instantly.</p>
     <div class="hero-actions">
-      <a href="/getting-started/introduction" class="sw-btn sw-btn-primary">Get Started</a>
-      <a href="/download" class="sw-btn sw-btn-secondary">Download CSS</a>
+      <a href={`${base}getting-started/introduction`} class="sw-btn sw-btn-primary">Get Started</a>
+      <a href={`${base}download`} class="sw-btn sw-btn-secondary">Download CSS</a>
     </div>
   </div>
 
