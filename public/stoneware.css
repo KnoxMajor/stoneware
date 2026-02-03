@@ -899,7 +899,7 @@ small {
   display: inline-flex;
   align-items: center;
   padding: 4px 8px;
-  background: var(--sw-gray-100);
+  background: var(--sw-bg-hover);
   border-radius: var(--sw-radius-md);
   font-size: var(--sw-text-xs);
   font-weight: var(--sw-font-medium);
