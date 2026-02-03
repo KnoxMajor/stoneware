@@ -580,11 +580,6 @@ small {
   box-shadow: var(--sw-shadow-lg);
 }
 
-.sw-card-header {
-  padding: var(--sw-space-5) var(--sw-space-6);
-  border-bottom: 1px solid var(--sw-border-default);
-}
-
 .sw-card-title {
   font-size: var(--sw-text-lg);
   font-weight: var(--sw-font-semibold);
@@ -598,19 +593,7 @@ small {
   margin: var(--sw-space-1) 0 0 0;
 }
 
-.sw-card-body {
-  padding: var(--sw-space-5) var(--sw-space-6);
-}
-
-.sw-card-content {
-  margin-bottom: var(--sw-space-6);
-}
-
-.sw-card-footer {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: var(--sw-space-3);
-  justify-content: flex-end;
+.sw-card {
   padding: var(--sw-space-5) var(--sw-space-6);
 }
 
