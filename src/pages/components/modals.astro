@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout title="Modals">
   <h1>Modals</h1>
-  <p>Dialog overlays for focused interactions.</p>
+  <p>Dialog overlays for focused interactions. Just a card, but centered and given a little more visual attention.</p>
 
   <h2>Basic Modal</h2>
   <div class="preview" style="background: var(--sw-gray-100); min-height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -28,7 +28,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </div>
 
   <h2>Structure</h2>
-  <pre><code set:html={`&lt;div class="sw-modal-overlay"&gt;
+  <p>Make sure to give the toggle the 'active' class when you want to see it</p>
+  <pre><code set:html={`&lt;div class="sw-modal-overlay active"&gt;
   &lt;div class="sw-card"&gt;
     &lt;h4 class="sw-card-title"&gt;Modal Title&lt;/h4&gt;
     &lt;p class="sw-card-subtitle"&gt;Modal content&lt;/p&gt;
@@ -37,15 +38,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   &lt;/div&gt;
 &lt;/div&gt;`}></code></pre>
 
-  <h2>Overlay CSS</h2>
+  <h2>CSS</h2>
+  <p>Just the overlay. Use <code>sw-card</code> for the modal content.</p>
   <pre><code set:html={`.sw-modal-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--sw-space-6);
   z-index: var(--sw-z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--sw-transition-normal), visibility var(--sw-transition-normal);
+}
+
+.sw-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }`}></code></pre>
 </BaseLayout>

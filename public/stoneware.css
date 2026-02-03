@@ -622,49 +622,6 @@ small {
   visibility: visible;
 }
 
-.sw-modal {
-  background: var(--sw-bg-card);
-  border-radius: var(--sw-radius-2xl);
-  width: 100%;
-  max-width: 400px;
-  margin: var(--sw-space-5);
-  box-shadow: var(--sw-shadow-xl);
-  transform: scale(0.95) translateY(10px);
-  transition: transform var(--sw-transition-normal);
-}
-
-.sw-modal-overlay.active .sw-modal {
-  transform: scale(1) translateY(0);
-}
-
-.sw-modal-header {
-  padding: var(--sw-space-5) var(--sw-space-6) 0;
-}
-
-.sw-modal-title {
-  font-size: var(--sw-text-2xl);
-  font-weight: var(--sw-font-semibold);
-  color: var(--sw-text-primary);
-  margin-bottom: var(--sw-space-2);
-}
-
-.sw-modal-body {
-  padding: var(--sw-space-3) var(--sw-space-6) var(--sw-space-6);
-}
-
-.sw-modal-message {
-  font-size: var(--sw-text-md);
-  color: var(--sw-text-secondary);
-  line-height: var(--sw-leading-relaxed);
-}
-
-.sw-modal-footer {
-  padding: 0 var(--sw-space-6) var(--sw-space-5);
-  display: flex;
-  gap: var(--sw-space-3);
-  justify-content: flex-end;
-}
-
 
 /* ==========================================================================
    9. CHAT MESSAGES
