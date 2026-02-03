@@ -185,7 +185,7 @@ ul, ol {
 
 /* Dark Mode */
 [data-theme="dark"] {
-  --sw-bg-page: #0a0a0a;
+  --sw-bg-page: #121214;
   --sw-bg-card: #18181b;
   --sw-bg-elevated: #27272a;
   --sw-bg-input: #27272a;
