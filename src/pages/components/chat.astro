@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Chat Messages">
+  <h1>Chat Messages</h1>
+  <p>Conversational UI with user (dark) and assistant (light) bubble styles.</p>
+
+  <h2>Basic Chat</h2>
+  <div class="preview" style="background: var(--sw-bg-page); padding: var(--sw-space-4);">
+    <div class="sw-chat-message assistant">
+      <div class="sw-message-bubble">Which brand are you working on?</div>
+    </div>
+    <div class="sw-chat-message user">
+      <div class="sw-message-bubble">Brand A - Cardiovascular</div>
+    </div>
+    <div class="sw-chat-message assistant">
+      <div class="sw-message-bubble">Great choice! What are you trying to accomplish with this campaign?</div>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;div class="sw-chat-message assistant"&gt;
+  &lt;div class="sw-message-bubble"&gt;Which brand are you working on?&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sw-chat-message user"&gt;
+  &lt;div class="sw-message-bubble"&gt;Brand A - Cardiovascular&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Message Types</h2>
+  <table>
+    <thead>
+      <tr><th>Class</th><th>Use</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>.sw-chat-message.user</code></td><td>User messages (dark background, right-aligned)</td></tr>
+      <tr><td><code>.sw-chat-message.assistant</code></td><td>Assistant messages (light background, left-aligned)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-chat-message {
+  display: flex;
+  margin-bottom: var(--sw-space-3);
+}
+
+.sw-chat-message.user {
+  justify-content: flex-end;
+}
+
+.sw-chat-message.assistant {
+  justify-content: flex-start;
+}
+
+.sw-message-bubble {
+  max-width: 80%;
+  padding: var(--sw-space-3) var(--sw-space-4);
+  border-radius: var(--sw-radius-xl);
+  font-size: var(--sw-text-md);
+  line-height: var(--sw-leading-normal);
+}
+
+.sw-chat-message.user .sw-message-bubble {
+  background: var(--sw-gray-900);
+  color: var(--sw-gray-50);
+  border-bottom-right-radius: var(--sw-radius-sm);
+}
+
+.sw-chat-message.assistant .sw-message-bubble {
+  background: var(--sw-gray-100);
+  color: var(--sw-text-primary);
+  border-bottom-left-radius: var(--sw-radius-sm);
+}`}></code></pre>
+</BaseLayout>

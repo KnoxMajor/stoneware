@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Data Display">
@@ -15,11 +15,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
       <div class="sw-metric">
         <span class="sw-metric-label">Active</span>
-        <span class="sw-metric-value" style="color: var(--sw-success);">8,294</span>
+        <span class="sw-metric-value" style="color: var(--sw-success);"
+          >8,294</span
+        >
       </div>
       <div class="sw-metric">
         <span class="sw-metric-label">Churn Rate</span>
-        <span class="sw-metric-value" style="color: var(--sw-danger);">2.4%</span>
+        <span class="sw-metric-value" style="color: var(--sw-danger);"
+          >2.4%</span
+        >
       </div>
     </div>
   </div>
@@ -29,44 +33,42 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     &lt;span class="sw-metric-value"&gt;12,483&lt;/span&gt;
   &lt;/div&gt;
   ...
-&lt;/div&gt;`}></code></pre>
+&lt;/div&gt;`} /></pre>
 
   <h2>Record Entry</h2>
   <div class="preview">
-    <div style="border: 1px solid var(--sw-border-default); border-radius: 12px; overflow: hidden;">
-      <a href="#" class="sw-record-entry">
-        <div class="sw-field-grid">
-          <div class="sw-field">
-            <span class="sw-field-label">Name</span>
-            <span class="sw-field-value">Acme Corporation</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Type</span>
-            <span class="sw-field-value">Enterprise</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Status</span>
-            <span class="sw-tag sw-tag-success">Active</span>
-          </div>
+    <a href="#" class="sw-record-entry">
+      <div class="sw-field-grid">
+        <div class="sw-field">
+          <span class="sw-field-label">Name</span>
+          <span class="sw-field-value">Acme Corporation</span>
         </div>
-      </a>
-      <a href="#" class="sw-record-entry">
-        <div class="sw-field-grid">
-          <div class="sw-field">
-            <span class="sw-field-label">Name</span>
-            <span class="sw-field-value">Startup Inc</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Type</span>
-            <span class="sw-field-value">Startup</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Status</span>
-            <span class="sw-tag sw-tag-warning">Pending</span>
-          </div>
+        <div class="sw-field">
+          <span class="sw-field-label">Type</span>
+          <span class="sw-field-value">Enterprise</span>
         </div>
-      </a>
-    </div>
+        <div class="sw-field">
+          <span class="sw-field-label">Status</span>
+          <span class="sw-tag sw-tag-success">Active</span>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="sw-record-entry">
+      <div class="sw-field-grid">
+        <div class="sw-field">
+          <span class="sw-field-label">Name</span>
+          <span class="sw-field-value">Startup Inc</span>
+        </div>
+        <div class="sw-field">
+          <span class="sw-field-label">Type</span>
+          <span class="sw-field-value">Startup</span>
+        </div>
+        <div class="sw-field">
+          <span class="sw-field-label">Status</span>
+          <span class="sw-tag sw-tag-warning">Pending</span>
+        </div>
+      </div>
+    </a>
   </div>
 
   <h2>CSS</h2>
@@ -108,5 +110,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 .sw-record-entry:not(:last-child) {
   border-bottom: 1px solid var(--sw-border-default);
-}`}></code></pre>
+}`} /></pre>
 </BaseLayout>

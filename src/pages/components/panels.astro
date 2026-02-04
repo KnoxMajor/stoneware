@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Panels">
+  <h1>Panels</h1>
+  <p>Sidebar containers for navigation, data sources, and supplementary content.</p>
+
+  <h2>Basic Panel</h2>
+  <div class="preview">
+    <div style="width: 280px; border: 1px solid var(--sw-border-default); border-radius: var(--sw-radius-lg); overflow: hidden;">
+      <div class="sw-panel-header">
+        <span class="sw-panel-title">Data Sources</span>
+        <button class="sw-btn-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="sw-panel-content">
+        <div class="sw-list-item">
+          <span class="sw-list-item-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M8 1H3a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V4L8 1z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <div class="sw-list-item-content">
+            <div class="sw-list-item-title">Competitor Analysis</div>
+            <div class="sw-list-item-meta">PDF - 2.4 MB</div>
+          </div>
+        </div>
+        <div class="sw-list-item">
+          <span class="sw-list-item-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M8 1H3a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V4L8 1z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <div class="sw-list-item-content">
+            <div class="sw-list-item-title">Market Research</div>
+            <div class="sw-list-item-meta">XLSX - 856 KB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;div class="sw-panel-header"&gt;
+  &lt;span class="sw-panel-title"&gt;Data Sources&lt;/span&gt;
+  &lt;button class="sw-btn-icon"&gt;...&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="sw-panel-content"&gt;
+  &lt;div class="sw-list-item"&gt;...&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sw-space-3) var(--sw-space-4);
+  border-bottom: 1px solid var(--sw-border-default);
+}
+
+.sw-panel-title {
+  font-size: var(--sw-text-xs);
+  font-weight: var(--sw-font-semibold);
+  color: var(--sw-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sw-panel-content {
+  padding: var(--sw-space-2);
+}`}></code></pre>
+</BaseLayout>

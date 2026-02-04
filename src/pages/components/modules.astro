@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Collapsible Modules">
+  <h1>Collapsible Modules</h1>
+  <p>Expandable sections for organizing grouped content.</p>
+
+  <h2>Basic Module</h2>
+  <div class="preview">
+    <div style="max-width: 300px;">
+      <div class="sw-module expanded">
+        <div class="sw-module-header" onclick="this.parentElement.classList.toggle('expanded')">
+          <div class="sw-module-title">
+            <span class="sw-module-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 14c0-2.5 2.5-4 5-4s5 1.5 5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Focus Groups
+          </div>
+          <svg class="sw-module-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sw-module-content">
+          <p style="font-size: 12px; color: var(--sw-text-muted); margin-bottom: var(--sw-space-3); padding-top: var(--sw-space-3);">3 focus group sessions</p>
+          <div class="sw-list-item">
+            <div class="sw-list-item-content">
+              <div class="sw-list-item-title">HCP Awareness Study</div>
+              <div class="sw-list-item-meta">12 participants</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sw-module">
+        <div class="sw-module-header" onclick="this.parentElement.classList.toggle('expanded')">
+          <div class="sw-module-title">
+            <span class="sw-module-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M14 8a6 6 0 11-12 0 6 6 0 0112 0z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+            Competitive Intel
+          </div>
+          <svg class="sw-module-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sw-module-content">
+          <p style="font-size: 12px; color: var(--sw-text-muted); padding-top: var(--sw-space-3);">Content here...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;div class="sw-module expanded"&gt;
+  &lt;div class="sw-module-header" onclick="this.parentElement.classList.toggle('expanded')"&gt;
+    &lt;div class="sw-module-title"&gt;
+      &lt;span class="sw-module-icon"&gt;...&lt;/span&gt;
+      Focus Groups
+    &lt;/div&gt;
+    &lt;svg class="sw-module-chevron"&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="sw-module-content"&gt;
+    Content here...
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>States</h2>
+  <table>
+    <thead>
+      <tr><th>Class</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>.sw-module</code></td><td>Collapsed state (default)</td></tr>
+      <tr><td><code>.sw-module.expanded</code></td><td>Expanded state - shows content</td></tr>
+    </tbody>
+  </table>
+
+  <h2>CSS</h2>
+  <pre><code set:html={`.sw-module {
+  border-bottom: 1px solid var(--sw-border-default);
+}
+
+.sw-module-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sw-space-3) var(--sw-space-4);
+  cursor: pointer;
+  transition: background var(--sw-transition-fast);
+}
+
+.sw-module-header:hover {
+  background: var(--sw-bg-hover);
+}
+
+.sw-module-title {
+  display: flex;
+  align-items: center;
+  gap: var(--sw-space-2);
+  font-size: var(--sw-text-sm);
+  font-weight: var(--sw-font-medium);
+  color: var(--sw-text-primary);
+}
+
+.sw-module-icon {
+  color: var(--sw-text-tertiary);
+}
+
+.sw-module-chevron {
+  color: var(--sw-text-tertiary);
+  transition: transform var(--sw-transition-fast);
+}
+
+.sw-module.expanded .sw-module-chevron {
+  transform: rotate(180deg);
+}
+
+.sw-module-content {
+  display: none;
+  padding: 0 var(--sw-space-4) var(--sw-space-4);
+}
+
+.sw-module.expanded .sw-module-content {
+  display: block;
+}`}></code></pre>
+</BaseLayout>

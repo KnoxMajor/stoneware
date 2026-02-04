@@ -67,6 +67,60 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   &lt;span&gt;Remember me&lt;/span&gt;
 &lt;/label&gt;`}></code></pre>
 
+  <h2>Select Options (Card Style)</h2>
+  <p>Radio buttons styled as selectable cards.</p>
+  <div class="preview">
+    <div style="max-width: 400px; display: flex; flex-direction: column; gap: var(--sw-space-3);">
+      <div class="sw-select-option selected">
+        <input type="radio" name="brand" class="sw-radio" checked>
+        <label>Brand A - Cardiovascular</label>
+      </div>
+      <div class="sw-select-option">
+        <input type="radio" name="brand" class="sw-radio">
+        <label>Brand B - Oncology</label>
+      </div>
+      <div class="sw-select-option">
+        <input type="radio" name="brand" class="sw-radio">
+        <label>Brand C - Immunology</label>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-select-option selected"&gt;
+  &lt;input type="radio" name="brand" class="sw-radio" checked&gt;
+  &lt;label&gt;Brand A - Cardiovascular&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="sw-select-option"&gt;
+  &lt;input type="radio" name="brand" class="sw-radio"&gt;
+  &lt;label&gt;Brand B - Oncology&lt;/label&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <h2>Checkboxes (Grid)</h2>
+  <p>Checkbox cards in a grid layout for multi-select.</p>
+  <div class="preview">
+    <div style="max-width: 400px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sw-space-3);">
+      <div class="sw-select-option selected">
+        <input type="checkbox" class="sw-checkbox" checked>
+        <label>Healthcare Providers</label>
+      </div>
+      <div class="sw-select-option selected">
+        <input type="checkbox" class="sw-checkbox" checked>
+        <label>Patients</label>
+      </div>
+      <div class="sw-select-option">
+        <input type="checkbox" class="sw-checkbox">
+        <label>Payers</label>
+      </div>
+      <div class="sw-select-option">
+        <input type="checkbox" class="sw-checkbox">
+        <label>Caregivers</label>
+      </div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-select-option selected"&gt;
+  &lt;input type="checkbox" class="sw-checkbox" checked&gt;
+  &lt;label&gt;Healthcare Providers&lt;/label&gt;
+&lt;/div&gt;`}></code></pre>
+
   <h2>CSS</h2>
   <pre><code set:html={`.sw-input {
   width: 100%;

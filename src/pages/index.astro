@@ -257,7 +257,7 @@ const base = import.meta.env.BASE_URL;
 
   <!-- BUTTONS -->
   <section id="buttons" class="showcase-section">
-    <h2 class="showcase-title">Buttons</h2>
+    <h2 class="showcase-title">Buttons <a href={`${base}components/buttons`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Dark primary buttons for main actions. Secondary for alternatives, ghost for minimal.</p>
 
     <div class="component-group">
@@ -269,6 +269,11 @@ const base = import.meta.env.BASE_URL;
         <button class="sw-btn sw-btn-ghost">Ghost</button>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;button class="sw-btn sw-btn-primary"&gt;Primary&lt;/button&gt;
+&lt;button class="sw-btn sw-btn-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="sw-btn sw-btn-danger"&gt;Danger&lt;/button&gt;
+&lt;button class="sw-btn sw-btn-ghost"&gt;Ghost&lt;/button&gt;`}></code></pre>
 
     <div class="component-group">
       <div class="component-label">Sizes</div>
@@ -311,7 +316,7 @@ const base = import.meta.env.BASE_URL;
 
   <!-- INPUTS -->
   <section id="inputs" class="showcase-section">
-    <h2 class="showcase-title">Inputs</h2>
+    <h2 class="showcase-title">Inputs <a href={`${base}components/inputs`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Clean inputs with subtle backgrounds. Focus state uses dark border.</p>
 
     <div class="component-group">
@@ -320,6 +325,8 @@ const base = import.meta.env.BASE_URL;
         <input class="sw-input" type="text" placeholder="Enter text here...">
       </div>
     </div>
+
+    <pre><code set:html={`&lt;input class="sw-input" type="text" placeholder="Enter text here..."&gt;`}></code></pre>
 
     <div class="component-group">
       <div class="component-label">Input with Icon</div>
@@ -377,11 +384,23 @@ const base = import.meta.env.BASE_URL;
         <textarea class="sw-textarea" placeholder="Enter a longer message..."></textarea>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;!-- Select Options (Card Style) --&gt;
+&lt;div class="sw-select-option selected"&gt;
+  &lt;input type="radio" name="brand" class="sw-radio" checked&gt;
+  &lt;label&gt;Brand A - Cardiovascular&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Checkboxes (Grid) --&gt;
+&lt;div class="sw-select-option selected"&gt;
+  &lt;input type="checkbox" class="sw-checkbox" checked&gt;
+  &lt;label&gt;Healthcare Providers&lt;/label&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- CARDS -->
   <section id="cards" class="showcase-section">
-    <h2 class="showcase-title">Cards</h2>
+    <h2 class="showcase-title">Cards <a href={`${base}components/cards`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Elevated containers for grouped content. Use for forms, dialogs, content sections.</p>
 
     <div class="component-group">
@@ -410,11 +429,19 @@ const base = import.meta.env.BASE_URL;
         <p style="margin-top: var(--sw-space-2); color: var(--sw-text-secondary);">Smaller padding for tighter UIs.</p>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-card"&gt;
+  &lt;h3 class="sw-card-title"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="sw-card-subtitle"&gt;Supporting description&lt;/p&gt;
+  &lt;p&gt;Card content here...&lt;/p&gt;
+  &lt;button class="sw-btn sw-btn-primary"&gt;Continue&lt;/button&gt;
+  &lt;button class="sw-btn sw-btn-secondary"&gt;Cancel&lt;/button&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- MODALS -->
   <section id="modals" class="showcase-section">
-    <h2 class="showcase-title">Modals</h2>
+    <h2 class="showcase-title">Modals <a href={`${base}components/modals`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Overlay dialogs for confirmations, forms, and focused tasks.</p>
 
     <div class="component-box" style="background: rgba(0,0,0,0.5); padding: var(--sw-space-12); display: flex; align-items: center; justify-content: center; min-height: 300px;">
@@ -422,16 +449,25 @@ const base = import.meta.env.BASE_URL;
         <div class="sw-card-title" style="font-size: var(--sw-text-2xl);">Confirm Action</div>
         <p style="margin: var(--sw-space-3) 0 var(--sw-space-6); color: var(--sw-text-secondary);">Are you sure you want to delete this item? This action cannot be undone.</p>
         <div class="sw-card-footer">
-          <button class="sw-btn sw-btn-danger">Delete</button>
-          <button class="sw-btn sw-btn-secondary">Cancel</button>
+          <button class="sw-btn sw-btn-danger sw-btn-sm">Delete</button>
+          <button class="sw-btn sw-btn-secondary sw-btn-sm">Cancel</button>
         </div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-modal-overlay active"&gt;
+  &lt;div class="sw-card"&gt;
+    &lt;h3 class="sw-card-title"&gt;Confirm Action&lt;/h3&gt;
+    &lt;p class="sw-card-subtitle"&gt;Are you sure?&lt;/p&gt;
+    &lt;button class="sw-btn sw-btn-danger sw-btn-sm"&gt;Delete&lt;/button&gt;
+    &lt;button class="sw-btn sw-btn-secondary sw-btn-sm"&gt;Cancel&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- CHAT MESSAGES -->
   <section id="chat" class="showcase-section">
-    <h2 class="showcase-title">Chat Messages</h2>
+    <h2 class="showcase-title">Chat Messages <a href={`${base}components/chat`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Conversational UI with user (dark) and assistant (light) bubble styles.</p>
 
     <div class="demo-chat-container">
@@ -448,11 +484,18 @@ const base = import.meta.env.BASE_URL;
         <div class="sw-message-bubble">Drive HCP awareness for new indication</div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-chat-message assistant"&gt;
+  &lt;div class="sw-message-bubble"&gt;Assistant message&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sw-chat-message user"&gt;
+  &lt;div class="sw-message-bubble"&gt;User message&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- PANELS -->
   <section id="panels" class="showcase-section">
-    <h2 class="showcase-title">Panels</h2>
+    <h2 class="showcase-title">Panels <a href={`${base}components/panels`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Sidebar containers for navigation, data sources, and supplementary content.</p>
 
     <div class="demo-panel">
@@ -489,11 +532,19 @@ const base = import.meta.env.BASE_URL;
         </div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-panel-header"&gt;
+  &lt;span class="sw-panel-title"&gt;Data Sources&lt;/span&gt;
+  &lt;button class="sw-btn-icon"&gt;...&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="sw-panel-content"&gt;
+  &lt;div class="sw-list-item"&gt;...&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- COLLAPSIBLE MODULES -->
   <section id="modules" class="showcase-section">
-    <h2 class="showcase-title">Collapsible Modules</h2>
+    <h2 class="showcase-title">Collapsible Modules <a href={`${base}components/modules`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Expandable sections for organizing grouped content.</p>
 
     <div style="max-width: 300px;">
@@ -542,11 +593,22 @@ const base = import.meta.env.BASE_URL;
         </div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-module expanded"&gt;
+  &lt;div class="sw-module-header"&gt;
+    &lt;div class="sw-module-title"&gt;
+      &lt;span class="sw-module-icon"&gt;...&lt;/span&gt;
+      Module Title
+    &lt;/div&gt;
+    &lt;svg class="sw-module-chevron"&gt;...&lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class="sw-module-content"&gt;...&lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- LISTS -->
   <section id="lists" class="showcase-section">
-    <h2 class="showcase-title">List Items</h2>
+    <h2 class="showcase-title">List Items <a href={`${base}components/lists`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Clickable list rows for files, documents, conversations.</p>
 
     <div style="max-width: 350px;">
@@ -581,11 +643,19 @@ const base = import.meta.env.BASE_URL;
         </div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-list-item"&gt;
+  &lt;span class="sw-list-item-icon"&gt;...&lt;/span&gt;
+  &lt;div class="sw-list-item-content"&gt;
+    &lt;div class="sw-list-item-title"&gt;Item Title&lt;/div&gt;
+    &lt;div class="sw-list-item-meta"&gt;Meta info&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- CHIPS & TAGS -->
   <section id="chips" class="showcase-section">
-    <h2 class="showcase-title">Chips & Tags</h2>
+    <h2 class="showcase-title">Chips & Tags <a href={`${base}components/chips-tags`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Clickable tags for suggestions, filters, or status indicators.</p>
 
     <div class="component-group">
@@ -606,11 +676,18 @@ const base = import.meta.env.BASE_URL;
         <span class="sw-tag sw-tag-danger">Danger</span>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;button class="sw-chip"&gt;Chip text&lt;/button&gt;
+
+&lt;span class="sw-tag"&gt;Default&lt;/span&gt;
+&lt;span class="sw-tag sw-tag-success"&gt;Success&lt;/span&gt;
+&lt;span class="sw-tag sw-tag-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="sw-tag sw-tag-danger"&gt;Danger&lt;/span&gt;`}></code></pre>
   </section>
 
   <!-- PROGRESS -->
   <section id="progress" class="showcase-section">
-    <h2 class="showcase-title">Progress Indicators</h2>
+    <h2 class="showcase-title">Progress Indicators <a href={`${base}components/progress`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Show progress through steps or loading states.</p>
 
     <div class="component-group">
@@ -638,11 +715,19 @@ const base = import.meta.env.BASE_URL;
         <div class="sw-spinner"></div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-progress-dots"&gt;
+  &lt;div class="sw-progress-dot completed"&gt;&lt;/div&gt;
+  &lt;div class="sw-progress-dot active"&gt;&lt;/div&gt;
+  &lt;div class="sw-progress-dot"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="sw-spinner"&gt;&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- BANNERS -->
   <section id="banners" class="showcase-section">
-    <h2 class="showcase-title">Banners</h2>
+    <h2 class="showcase-title">Banners <a href={`${base}components/banners`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Contextual alerts for warnings, updates, or status messages.</p>
 
     <div style="max-width: 520px; display: flex; flex-direction: column; gap: var(--sw-space-3);">
@@ -667,11 +752,19 @@ const base = import.meta.env.BASE_URL;
         </div>
       </div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-banner sw-banner-warning"&gt;
+  &lt;span class="sw-banner-text"&gt;You have pending changes&lt;/span&gt;
+  &lt;div class="sw-banner-actions"&gt;
+    &lt;button class="sw-btn sw-btn-sm sw-btn-outline"&gt;Dismiss&lt;/button&gt;
+    &lt;button class="sw-btn sw-btn-sm sw-btn-primary"&gt;Update&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- AVATARS -->
   <section id="avatars" class="showcase-section">
-    <h2 class="showcase-title">Avatars</h2>
+    <h2 class="showcase-title">Avatars <a href={`${base}components/avatars`} class="section-link">View Details →</a></h2>
     <p class="showcase-description">Circular placeholders for user or persona images.</p>
 
     <div class="component-row">
@@ -680,6 +773,11 @@ const base = import.meta.env.BASE_URL;
       <div class="sw-avatar">JD</div>
       <div class="sw-avatar sw-avatar-lg">XY</div>
     </div>
+
+    <pre><code set:html={`&lt;div class="sw-avatar sw-avatar-xs"&gt;A&lt;/div&gt;
+&lt;div class="sw-avatar sw-avatar-sm"&gt;BC&lt;/div&gt;
+&lt;div class="sw-avatar"&gt;JD&lt;/div&gt;
+&lt;div class="sw-avatar sw-avatar-lg"&gt;XY&lt;/div&gt;`}></code></pre>
   </section>
 
   <!-- LAYOUTS -->
@@ -774,6 +872,18 @@ const base = import.meta.env.BASE_URL;
     margin-top: 0 !important;
     padding: 0 !important;
     border: none !important;
+  }
+
+  .section-link {
+    font-size: var(--sw-text-sm);
+    font-weight: 500;
+    color: var(--sw-text-tertiary);
+    margin-left: var(--sw-space-3);
+    text-decoration: none;
+  }
+
+  .section-link:hover {
+    color: var(--sw-text-primary);
   }
 
   .showcase-description {
