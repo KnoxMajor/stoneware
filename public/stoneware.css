@@ -351,6 +351,7 @@ small {
 
 .sw-btn-primary:disabled {
   background: var(--sw-gray-200);
+  border-color: var(--sw-gray-200);
   color: var(--sw-text-muted);
   cursor: not-allowed;
 }
@@ -368,6 +369,8 @@ small {
 }
 
 .sw-btn-secondary:disabled {
+  background: transparent;
+  border-color: var(--sw-gray-200);
   color: var(--sw-text-muted);
   cursor: not-allowed;
 }
@@ -381,6 +384,13 @@ small {
 
 .sw-btn-danger:hover:not(:disabled) {
   background: var(--sw-danger-hover);
+}
+
+.sw-btn-danger:disabled {
+  background: var(--sw-gray-200);
+  border-color: var(--sw-gray-200);
+  color: var(--sw-text-muted);
+  cursor: not-allowed;
 }
 
 /* Ghost Button */
@@ -434,6 +444,7 @@ small {
   border-radius: var(--sw-radius-lg);
   font-family: var(--sw-font-family);
   font-size: var(--sw-text-md);
+  line-height: 1;
   color: var(--sw-text-primary);
   transition: all var(--sw-transition-fast);
 }
