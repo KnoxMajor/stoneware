@@ -583,7 +583,11 @@ small {
   box-shadow: var(--sw-shadow-md);
 }
 
-/* Space adjacent buttons inside cards */
+/* Space buttons inside cards */
+.sw-card > .sw-btn:first-of-type {
+  margin-top: var(--sw-space-6);
+}
+
 .sw-card > .sw-btn + .sw-btn {
   margin-left: var(--sw-space-3);
 }
