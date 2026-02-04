@@ -128,7 +128,7 @@ const base = import.meta.env.BASE_URL;
       border-top: 1px solid var(--sw-border-default);
     }
 
-    .content h3 {
+    .content h3:not(.sw-card-title) {
       font-size: var(--sw-text-xl);
       font-weight: var(--sw-font-semibold);
       color: var(--sw-text-primary);
@@ -136,7 +136,7 @@ const base = import.meta.env.BASE_URL;
       margin-bottom: var(--sw-space-3);
     }
 
-    .content p {
+    .content p:not(.sw-card-subtitle) {
       font-size: var(--sw-text-md);
       line-height: 1.7;
       color: var(--sw-text-secondary);

@@ -320,7 +320,7 @@ small {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--sw-space-2);
+  gap: var(--sw-space-3);
   padding: 11px 20px;
   border-radius: var(--sw-radius-lg);
   font-family: var(--sw-font-family);
@@ -338,6 +338,7 @@ small {
 .sw-btn-primary {
   background: var(--sw-primary);
   color: var(--sw-text-inverse) !important;
+  border: 1.5px solid var(--sw-primary);
 }
 
 .sw-btn-primary:hover:not(:disabled) {
@@ -375,6 +376,7 @@ small {
 .sw-btn-danger {
   background: var(--sw-danger);
   color: var(--sw-gray-50);
+  border: 1.5px solid var(--sw-danger);
 }
 
 .sw-btn-danger:hover:not(:disabled) {
@@ -565,8 +567,19 @@ small {
 
 .sw-card {
   background: var(--sw-bg-card);
-  border-radius: var(--sw-radius-2xl);
-  overflow: hidden;
+  border-radius: var(--sw-radius-3xl);
+  padding: var(--sw-space-10);
+  box-shadow: var(--sw-shadow-md);
+}
+
+/* Space adjacent buttons inside cards */
+.sw-card > .sw-btn + .sw-btn {
+  margin-left: var(--sw-space-3);
+}
+
+.sw-card-sm {
+  padding: var(--sw-space-6);
+  border-radius: var(--sw-radius-xl);
 }
 
 .sw-card-bordered {
@@ -575,24 +588,34 @@ small {
 }
 
 .sw-card-elevated {
-  box-shadow: var(--sw-shadow-sm);
+  box-shadow: var(--sw-shadow-lg);
+}
+
+.sw-card-header {
+  margin-bottom: var(--sw-space-6);
 }
 
 .sw-card-title {
-  font-size: var(--sw-text-lg);
+  font-size: var(--sw-text-2xl);
   font-weight: var(--sw-font-semibold);
   color: var(--sw-text-primary);
-  margin: 0;
+  margin-bottom: var(--sw-space-2);
 }
 
 .sw-card-subtitle {
-  font-size: var(--sw-text-sm);
-  color: var(--sw-text-secondary);
-  margin: var(--sw-space-1) 0 0 0;
+  font-size: var(--sw-text-lg);
+  color: var(--sw-text-tertiary);
+  line-height: var(--sw-leading-normal);
+  padding: var(--sw-space-3) 0px var(--sw-space-6);
 }
 
-.sw-card {
-  padding: var(--sw-space-5) var(--sw-space-6);
+.sw-card-content {
+  margin-bottom: var(--sw-space-6);
+}
+
+.sw-card-footer {
+  display: flex;
+  gap: var(--sw-space-3);
 }
 
 
@@ -980,6 +1003,37 @@ small {
   gap: var(--sw-space-2);
 }
 
+/* Banner-specific button variants */
+.sw-banner-warning .sw-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--sw-warning);
+  color: var(--sw-warning-text);
+}
+
+.sw-banner-warning .sw-btn-outline:hover {
+  background: rgba(217, 119, 6, 0.1);
+}
+
+.sw-banner-danger .sw-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--sw-danger);
+  color: var(--sw-danger);
+}
+
+.sw-banner-danger .sw-btn-outline:hover {
+  background: rgba(220, 38, 38, 0.1);
+}
+
+.sw-banner-success .sw-btn-outline {
+  background: transparent;
+  border: 1.5px solid var(--sw-success);
+  color: var(--sw-success);
+}
+
+.sw-banner-success .sw-btn-outline:hover {
+  background: rgba(22, 163, 74, 0.1);
+}
+
 
 /* ==========================================================================
    16. AVATARS
@@ -994,10 +1048,11 @@ small {
   border-radius: var(--sw-radius-full);
   background: linear-gradient(135deg, var(--sw-gray-200) 0%, var(--sw-gray-300) 100%);
   font-size: var(--sw-text-sm);
-  font-weight: var(--sw-font-medium);
+  font-weight: var(--sw-font-semibold);
   color: var(--sw-text-secondary);
   flex-shrink: 0;
   overflow: hidden;
+  text-transform: uppercase;
 }
 
 .sw-avatar img {
@@ -1014,11 +1069,13 @@ small {
 .sw-avatar-xs {
   width: 24px;
   height: 24px;
+  font-size: var(--sw-text-xs);
 }
 
 .sw-avatar-lg {
   width: 56px;
   height: 56px;
+  font-size: var(--sw-text-lg);
 }
 
 .sw-avatar-group {

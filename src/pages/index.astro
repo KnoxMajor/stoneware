@@ -1,28 +1,268 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const base = import.meta.env.BASE_URL;
-
-const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
-&lt;link rel="stylesheet" href="stoneware.css"&gt;
-
-&lt;!-- Start using components --&gt;
-&lt;button class="sw-btn sw-btn-primary"&gt;Get Started&lt;/button&gt;`;
 ---
 
-<BaseLayout title="Home">
-  <div class="">
-    <h1>Stoneware</h1>
-    <p>A drop in one-file CSS design system.</p>
-    <a href={`${base}download`} class="sw-btn sw-btn-primary">Download CSS</a>
-    <a href={`${base}getting-started/introduction`} class="sw-btn sw-btn-secondary">Design Principles</a>
+<BaseLayout title="Component Library">
+  <!-- Header -->
+  <div style="margin-bottom: var(--sw-space-12);">
+    <h1 style="font-size: 36px; font-weight: 700; color: var(--sw-text-primary); margin-bottom: var(--sw-space-2);">
+      Stoneware Design System
+    </h1>
+    <p style="font-size: var(--sw-text-lg); color: var(--sw-text-secondary); margin-bottom: var(--sw-space-6);">
+      A minimal, dark-accent component library for building clean, professional interfaces.
+    </p>
+    <div style="display: flex; gap: var(--sw-space-3);">
+      <a href={`${base}download`} class="sw-btn sw-btn-primary">Download CSS</a>
+      <a href={`${base}getting-started/introduction`} class="sw-btn sw-btn-secondary">Documentation</a>
+    </div>
   </div>
 
-  <h2>Live Components</h2>
+  <!-- COLORS -->
+  <section id="colors" class="showcase-section">
+    <h2 class="showcase-title">Colors</h2>
+    <p class="showcase-description">The color palette is intentionally neutral-focused. Use grays for most UI, reserve color for semantics.</p>
 
-  <div class="showcase-grid">
-    <div class="showcase-section">
-      <h4 class="showcase-title">Buttons</h4>
-      <div class="preview-row">
+    <div class="component-group">
+      <div class="component-label">Neutrals</div>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #fafafa;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 50</div>
+            <div class="color-swatch-value">#fafafa</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #f4f4f5;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 100</div>
+            <div class="color-swatch-value">#f4f4f5</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #e4e4e7;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 200</div>
+            <div class="color-swatch-value">#e4e4e7</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #a1a1aa;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 400</div>
+            <div class="color-swatch-value">#a1a1aa</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #71717a;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 500</div>
+            <div class="color-swatch-value">#71717a</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #52525b;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 600</div>
+            <div class="color-swatch-value">#52525b</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #18181b;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Gray 900</div>
+            <div class="color-swatch-value">#18181b</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #0a0a0a;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Black</div>
+            <div class="color-swatch-value">#0a0a0a</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Semantic</div>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #dc2626;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Danger</div>
+            <div class="color-swatch-value">#dc2626</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #d97706;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Warning</div>
+            <div class="color-swatch-value">#d97706</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #16a34a;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Success</div>
+            <div class="color-swatch-value">#16a34a</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="color-swatch-color" style="background: #1c8ece;"></div>
+          <div class="color-swatch-info">
+            <div class="color-swatch-name">Accent</div>
+            <div class="color-swatch-value">#1c8ece</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section id="typography" class="showcase-section">
+    <h2 class="showcase-title">Typography</h2>
+    <p class="showcase-description">System font stack with a clear hierarchy. Weights: 400 (body), 500 (medium), 600 (semibold).</p>
+
+    <div class="component-box">
+      <div style="margin-bottom: var(--sw-space-6);">
+        <span class="component-label" style="margin-bottom: var(--sw-space-2); display: block;">HEADINGS</span>
+        <div style="font-size: 28px; font-weight: 600; color: var(--sw-text-primary); margin-bottom: var(--sw-space-3);">Heading XL (28px)</div>
+        <div style="font-size: 24px; font-weight: 600; color: var(--sw-text-primary); margin-bottom: var(--sw-space-3);">Heading LG (24px)</div>
+        <div style="font-size: 18px; font-weight: 600; color: var(--sw-text-primary); margin-bottom: var(--sw-space-3);">Heading MD (18px)</div>
+        <div style="font-size: 15px; font-weight: 600; color: var(--sw-text-primary);">Heading SM (15px)</div>
+      </div>
+
+      <div style="margin-bottom: var(--sw-space-6);">
+        <span class="component-label" style="margin-bottom: var(--sw-space-2); display: block;">BODY TEXT</span>
+        <p style="font-size: 14px; color: var(--sw-text-secondary); margin-bottom: var(--sw-space-2);">Body text for paragraphs and main content. (14px)</p>
+        <p style="font-size: 13px; color: var(--sw-text-secondary); margin-bottom: var(--sw-space-2);">Small text for secondary information. (13px)</p>
+        <p style="font-size: 12px; color: var(--sw-text-tertiary);">Caption text for metadata and timestamps. (12px)</p>
+      </div>
+
+      <div>
+        <span class="component-label" style="margin-bottom: var(--sw-space-2); display: block;">LABELS</span>
+        <span class="sw-label">UPPERCASE LABEL (11px)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPACING -->
+  <section id="spacing" class="showcase-section">
+    <h2 class="showcase-title">Spacing</h2>
+    <p class="showcase-description">Based on a 4px grid. Use consistent spacing tokens for margins and padding.</p>
+
+    <div class="component-box">
+      <div class="spacing-demo">
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 4px;"></div>
+          <span class="spacing-label">4px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 8px;"></div>
+          <span class="spacing-label">8px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 12px;"></div>
+          <span class="spacing-label">12px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 16px;"></div>
+          <span class="spacing-label">16px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 20px;"></div>
+          <span class="spacing-label">20px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 24px;"></div>
+          <span class="spacing-label">24px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 32px;"></div>
+          <span class="spacing-label">32px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 40px;"></div>
+          <span class="spacing-label">40px</span>
+        </div>
+        <div class="spacing-item">
+          <div class="spacing-bar" style="height: 48px;"></div>
+          <span class="spacing-label">48px</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHADOWS -->
+  <section id="shadows" class="showcase-section">
+    <h2 class="showcase-title">Shadows</h2>
+    <p class="showcase-description">Subtle, layered shadows for depth. Use sparingly - most elements don't need shadows.</p>
+
+    <div class="component-row">
+      <div class="shadow-box" style="box-shadow: var(--sw-shadow-sm);">
+        <span>Shadow SM</span>
+      </div>
+      <div class="shadow-box" style="box-shadow: var(--sw-shadow-md);">
+        <span>Shadow MD</span>
+      </div>
+      <div class="shadow-box" style="box-shadow: var(--sw-shadow-lg);">
+        <span>Shadow LG</span>
+      </div>
+      <div class="shadow-box" style="box-shadow: var(--sw-shadow-xl);">
+        <span>Shadow XL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BORDER RADIUS -->
+  <section id="radius" class="showcase-section">
+    <h2 class="showcase-title">Border Radius</h2>
+    <p class="showcase-description">Consistent rounding. 8px for most elements, 12-16px for cards and modals.</p>
+
+    <div class="component-box">
+      <div class="radius-demo">
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 4px;"></div>
+          <span class="spacing-label">4px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 6px;"></div>
+          <span class="spacing-label">6px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 8px;"></div>
+          <span class="spacing-label">8px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 10px;"></div>
+          <span class="spacing-label">10px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 12px;"></div>
+          <span class="spacing-label">12px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 16px;"></div>
+          <span class="spacing-label">16px</span>
+        </div>
+        <div class="radius-item">
+          <div class="radius-box" style="border-radius: 9999px;"></div>
+          <span class="spacing-label">Full</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUTTONS -->
+  <section id="buttons" class="showcase-section">
+    <h2 class="showcase-title">Buttons</h2>
+    <p class="showcase-description">Dark primary buttons for main actions. Secondary for alternatives, ghost for minimal.</p>
+
+    <div class="component-group">
+      <div class="component-label">Variants</div>
+      <div class="component-row">
         <button class="sw-btn sw-btn-primary">Primary</button>
         <button class="sw-btn sw-btn-secondary">Secondary</button>
         <button class="sw-btn sw-btn-danger">Danger</button>
@@ -30,183 +270,688 @@ const quickStartCode = `&lt;!-- Add to your HTML head --&gt;
       </div>
     </div>
 
-    <div class="showcase-section">
-      <h4 class="showcase-title">Inputs</h4>
-      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 280px;">
-        <input type="text" class="sw-input" placeholder="Text input..." />
+    <div class="component-group">
+      <div class="component-label">Sizes</div>
+      <div class="component-row">
+        <button class="sw-btn sw-btn-primary sw-btn-sm">Small</button>
+        <button class="sw-btn sw-btn-primary">Default</button>
+        <button class="sw-btn sw-btn-primary sw-btn-lg">Large</button>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">States</div>
+      <div class="component-row">
+        <button class="sw-btn sw-btn-primary">Normal</button>
+        <button class="sw-btn sw-btn-primary" disabled>Disabled</button>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Icon Buttons</div>
+      <div class="component-row">
+        <button class="sw-btn-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="sw-btn-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M8.5 1.5l2 2-6 6H2.5v-2l6-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="sw-btn-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M9 3L3 9M3 3l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INPUTS -->
+  <section id="inputs" class="showcase-section">
+    <h2 class="showcase-title">Inputs</h2>
+    <p class="showcase-description">Clean inputs with subtle backgrounds. Focus state uses dark border.</p>
+
+    <div class="component-group">
+      <div class="component-label">Text Input</div>
+      <div style="max-width: 400px;">
+        <input class="sw-input" type="text" placeholder="Enter text here...">
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Input with Icon</div>
+      <div style="max-width: 400px;">
         <div class="sw-input-group">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
-          <input type="text" class="sw-input" placeholder="Search..." />
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input class="sw-input" type="text" placeholder="Search...">
         </div>
       </div>
     </div>
 
-    <div class="showcase-section">
-      <h4 class="showcase-title">Tags</h4>
-      <div class="preview-row">
+    <div class="component-group">
+      <div class="component-label">Select Options (Card Style)</div>
+      <div style="max-width: 400px; display: flex; flex-direction: column; gap: var(--sw-space-3);">
+        <div class="sw-select-option selected">
+          <input type="radio" name="demo-brand" class="sw-radio" checked>
+          <label>Brand A - Cardiovascular</label>
+        </div>
+        <div class="sw-select-option">
+          <input type="radio" name="demo-brand" class="sw-radio">
+          <label>Brand B - Oncology</label>
+        </div>
+        <div class="sw-select-option">
+          <input type="radio" name="demo-brand" class="sw-radio">
+          <label>Brand C - Immunology</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Checkboxes (Grid)</div>
+      <div style="max-width: 400px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sw-space-3);">
+        <div class="sw-select-option selected">
+          <input type="checkbox" class="sw-checkbox" checked>
+          <label>Healthcare Providers</label>
+        </div>
+        <div class="sw-select-option selected">
+          <input type="checkbox" class="sw-checkbox" checked>
+          <label>Patients</label>
+        </div>
+        <div class="sw-select-option">
+          <input type="checkbox" class="sw-checkbox">
+          <label>Payers</label>
+        </div>
+        <div class="sw-select-option">
+          <input type="checkbox" class="sw-checkbox">
+          <label>Caregivers</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Textarea</div>
+      <div style="max-width: 400px;">
+        <textarea class="sw-textarea" placeholder="Enter a longer message..."></textarea>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section id="cards" class="showcase-section">
+    <h2 class="showcase-title">Cards</h2>
+    <p class="showcase-description">Elevated containers for grouped content. Use for forms, dialogs, content sections.</p>
+
+    <div class="component-group">
+      <div class="component-label">Default Card</div>
+      <div class="sw-card" style="max-width: 440px;">
+        <div class="sw-card-header">
+          <div class="sw-card-title">Card Title</div>
+          <div class="sw-card-subtitle">Supporting description text goes here</div>
+        </div>
+        <div class="sw-card-content">
+          <p style="color: var(--sw-text-secondary);">This is the card content area. You can put any content here - forms, text, images, etc.</p>
+        </div>
+        <div class="sw-card-footer">
+          <button class="sw-btn sw-btn-primary">Continue</button>
+          <button class="sw-btn sw-btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Bordered Card (No Shadow)</div>
+      <div class="sw-card sw-card-bordered" style="max-width: 440px;">
+        <div class="sw-card-header">
+          <div class="sw-card-title">Bordered Variant</div>
+          <div class="sw-card-subtitle">Use this for inline cards within a page where elevation isn't needed.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Small Card</div>
+      <div class="sw-card sw-card-sm" style="max-width: 320px;">
+        <div class="sw-card-title" style="font-size: var(--sw-text-2xl);">Compact Card</div>
+        <p style="margin-top: var(--sw-space-2); color: var(--sw-text-secondary);">Smaller padding for tighter UIs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODALS -->
+  <section id="modals" class="showcase-section">
+    <h2 class="showcase-title">Modals</h2>
+    <p class="showcase-description">Overlay dialogs for confirmations, forms, and focused tasks.</p>
+
+    <div class="component-box" style="background: rgba(0,0,0,0.5); padding: var(--sw-space-12); display: flex; align-items: center; justify-content: center; min-height: 300px;">
+      <div class="sw-card sw-card-sm" style="max-width: 380px; box-shadow: var(--sw-shadow-xl);">
+        <div class="sw-card-title" style="font-size: var(--sw-text-2xl);">Confirm Action</div>
+        <p style="margin: var(--sw-space-3) 0 var(--sw-space-6); color: var(--sw-text-secondary);">Are you sure you want to delete this item? This action cannot be undone.</p>
+        <div class="sw-card-footer">
+          <button class="sw-btn sw-btn-danger">Delete</button>
+          <button class="sw-btn sw-btn-secondary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAT MESSAGES -->
+  <section id="chat" class="showcase-section">
+    <h2 class="showcase-title">Chat Messages</h2>
+    <p class="showcase-description">Conversational UI with user (dark) and assistant (light) bubble styles.</p>
+
+    <div class="demo-chat-container">
+      <div class="sw-chat-message assistant">
+        <div class="sw-message-bubble">Which brand are you working on?</div>
+      </div>
+      <div class="sw-chat-message user">
+        <div class="sw-message-bubble">Brand A - Cardiovascular</div>
+      </div>
+      <div class="sw-chat-message assistant">
+        <div class="sw-message-bubble">Great choice! What are you trying to accomplish with this campaign?</div>
+      </div>
+      <div class="sw-chat-message user">
+        <div class="sw-message-bubble">Drive HCP awareness for new indication</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANELS -->
+  <section id="panels" class="showcase-section">
+    <h2 class="showcase-title">Panels</h2>
+    <p class="showcase-description">Sidebar containers for navigation, data sources, and supplementary content.</p>
+
+    <div class="demo-panel">
+      <div class="sw-panel-header">
+        <span class="sw-panel-title">Data Sources</span>
+        <button class="sw-btn-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="sw-panel-content">
+        <div class="sw-list-item">
+          <span class="sw-list-item-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M8 1H3a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V4L8 1z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <div class="sw-list-item-content">
+            <div class="sw-list-item-title">Competitor Analysis</div>
+            <div class="sw-list-item-meta">PDF - 2.4 MB</div>
+          </div>
+        </div>
+        <div class="sw-list-item">
+          <span class="sw-list-item-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M8 1H3a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V4L8 1z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </span>
+          <div class="sw-list-item-content">
+            <div class="sw-list-item-title">Market Research</div>
+            <div class="sw-list-item-meta">XLSX - 856 KB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLAPSIBLE MODULES -->
+  <section id="modules" class="showcase-section">
+    <h2 class="showcase-title">Collapsible Modules</h2>
+    <p class="showcase-description">Expandable sections for organizing grouped content.</p>
+
+    <div style="max-width: 300px;">
+      <div class="sw-module expanded">
+        <div class="sw-module-header" onclick="this.parentElement.classList.toggle('expanded')">
+          <div class="sw-module-title">
+            <span class="sw-module-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle cx="8" cy="5" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 14c0-2.5 2.5-4 5-4s5 1.5 5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Focus Groups
+          </div>
+          <svg class="sw-module-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sw-module-content">
+          <p style="font-size: 12px; color: var(--sw-text-muted); margin-bottom: var(--sw-space-3); padding-top: var(--sw-space-3);">3 focus group sessions</p>
+          <div class="sw-list-item">
+            <div class="sw-list-item-content">
+              <div class="sw-list-item-title">HCP Awareness Study</div>
+              <div class="sw-list-item-meta">12 participants</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sw-module">
+        <div class="sw-module-header" onclick="this.parentElement.classList.toggle('expanded')">
+          <div class="sw-module-title">
+            <span class="sw-module-icon">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M14 8a6 6 0 11-12 0 6 6 0 0112 0z" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </span>
+            Competitive Intel
+          </div>
+          <svg class="sw-module-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="sw-module-content">
+          <p style="font-size: 12px; color: var(--sw-text-muted); padding-top: var(--sw-space-3);">Content here...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LISTS -->
+  <section id="lists" class="showcase-section">
+    <h2 class="showcase-title">List Items</h2>
+    <p class="showcase-description">Clickable list rows for files, documents, conversations.</p>
+
+    <div style="max-width: 350px;">
+      <div class="sw-list-item">
+        <span class="sw-list-item-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M8 1H3a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V4L8 1z" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </span>
+        <div class="sw-list-item-content">
+          <div class="sw-list-item-title">Competitor Analysis Q4</div>
+          <div class="sw-list-item-meta">PDF - 2.4 MB - Updated Jan 15</div>
+        </div>
+      </div>
+      <div class="sw-list-item">
+        <div class="sw-avatar sw-avatar-xs">E</div>
+        <div class="sw-list-item-content">
+          <div class="sw-list-item-title">Ellie - AS Cluster 3</div>
+          <div class="sw-list-item-meta">82 conversations</div>
+        </div>
+      </div>
+      <div class="sw-list-item">
+        <span class="sw-list-item-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 3h10v8H2z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M5 6h4M5 8h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <div class="sw-list-item-content">
+          <div class="sw-list-item-title">HCP Awareness Study</div>
+          <div class="sw-list-item-meta">12 participants - Dec 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHIPS & TAGS -->
+  <section id="chips" class="showcase-section">
+    <h2 class="showcase-title">Chips & Tags</h2>
+    <p class="showcase-description">Clickable tags for suggestions, filters, or status indicators.</p>
+
+    <div class="component-group">
+      <div class="component-label">Chips (Clickable)</div>
+      <div class="component-row">
+        <button class="sw-chip">Drive HCP awareness</button>
+        <button class="sw-chip">Support adherence</button>
+        <button class="sw-chip">Launch campaign</button>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Tags (Status)</div>
+      <div class="component-row">
         <span class="sw-tag">Default</span>
         <span class="sw-tag sw-tag-success">Success</span>
         <span class="sw-tag sw-tag-warning">Warning</span>
         <span class="sw-tag sw-tag-danger">Danger</span>
       </div>
     </div>
+  </section>
 
-    <div class="showcase-section">
-      <h4 class="showcase-title">Avatars</h4>
-      <div class="preview-row">
-        <div class="sw-avatar sw-avatar-lg">JD</div>
-        <div class="sw-avatar">AB</div>
-        <div class="sw-avatar sw-avatar-sm">XY</div>
-        <div class="sw-avatar sw-avatar-xs">Z</div>
-      </div>
-    </div>
-  </div>
+  <!-- PROGRESS -->
+  <section id="progress" class="showcase-section">
+    <h2 class="showcase-title">Progress Indicators</h2>
+    <p class="showcase-description">Show progress through steps or loading states.</p>
 
-  <div class="card-showcase">
-    <div class="sw-card">
-      <h4 class="sw-card-title">Standard Card</h4>
-      <p class="sw-card-subtitle">With header, content, and footer</p>
-      <p>Cards are versatile containers for grouping related content.</p>
-      <button class="sw-btn sw-btn-primary">Save</button>
-      <button class="sw-btn sw-btn-ghost">Cancel</button>
-    </div>
-
-    <div class="sw-card sw-card-bordered">
-      <div class="sw-card-body">
-        <div class="sw-field-grid">
-          <div class="sw-field">
-            <span class="sw-field-label">Name</span>
-            <span class="sw-field-value">Jane Smith</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Role</span>
-            <span class="sw-field-value">Designer</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Status</span>
-            <span class="sw-tag sw-tag-success">Active</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Location</span>
-            <span class="sw-field-value">San Francisco</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Qty</span>
-            <span class="sw-field-value">243032</span>
-          </div>
-          <div class="sw-field">
-            <span class="sw-field-label">Segment</span>
-            <span class="sw-field-value">da_020_dp_acr</span>
-          </div>
+    <div class="component-group">
+      <div class="component-label">Progress Dots</div>
+      <div class="component-box" style="display: flex; flex-direction: column; gap: var(--sw-space-4); align-items: center;">
+        <div class="sw-progress-dots">
+          <div class="sw-progress-dot active"></div>
+          <div class="sw-progress-dot"></div>
+          <div class="sw-progress-dot"></div>
+          <div class="sw-progress-dot"></div>
+        </div>
+        <div class="sw-progress-dots">
+          <div class="sw-progress-dot completed"></div>
+          <div class="sw-progress-dot completed"></div>
+          <div class="sw-progress-dot active"></div>
+          <div class="sw-progress-dot"></div>
         </div>
       </div>
     </div>
+
+    <div class="component-group">
+      <div class="component-label">Spinners</div>
+      <div class="component-row">
+        <div class="sw-spinner sw-spinner-sm"></div>
+        <div class="sw-spinner"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNERS -->
+  <section id="banners" class="showcase-section">
+    <h2 class="showcase-title">Banners</h2>
+    <p class="showcase-description">Contextual alerts for warnings, updates, or status messages.</p>
+
+    <div style="max-width: 520px; display: flex; flex-direction: column; gap: var(--sw-space-3);">
+      <div class="sw-banner sw-banner-warning">
+        <span class="sw-banner-text">You have pending changes</span>
+        <div class="sw-banner-actions">
+          <button class="sw-btn sw-btn-sm sw-btn-outline">Dismiss</button>
+          <button class="sw-btn sw-btn-sm sw-btn-primary">Update Brief</button>
+        </div>
+      </div>
+      <div class="sw-banner sw-banner-danger">
+        <span class="sw-banner-text">Error: Unable to save changes</span>
+        <div class="sw-banner-actions">
+          <button class="sw-btn sw-btn-sm sw-btn-outline">Dismiss</button>
+          <button class="sw-btn sw-btn-sm sw-btn-danger">Retry</button>
+        </div>
+      </div>
+      <div class="sw-banner sw-banner-success">
+        <span class="sw-banner-text">Changes saved successfully</span>
+        <div class="sw-banner-actions">
+          <button class="sw-btn sw-btn-sm sw-btn-outline">View</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVATARS -->
+  <section id="avatars" class="showcase-section">
+    <h2 class="showcase-title">Avatars</h2>
+    <p class="showcase-description">Circular placeholders for user or persona images.</p>
+
+    <div class="component-row">
+      <div class="sw-avatar sw-avatar-xs">A</div>
+      <div class="sw-avatar sw-avatar-sm">BC</div>
+      <div class="sw-avatar">JD</div>
+      <div class="sw-avatar sw-avatar-lg">XY</div>
+    </div>
+  </section>
+
+  <!-- LAYOUTS -->
+  <section id="layouts" class="showcase-section">
+    <h2 class="showcase-title">Layout Patterns</h2>
+    <p class="showcase-description">Common page structures used throughout applications.</p>
+
+    <div class="component-group">
+      <div class="component-label">Three-Panel Layout</div>
+      <div class="demo-layout">
+        <div class="demo-layout-sidebar">
+          <span class="sw-label">SIDEBAR</span>
+          <p style="font-size: 12px; color: var(--sw-text-tertiary); margin-top: var(--sw-space-2);">Navigation</p>
+        </div>
+        <div class="demo-layout-main">
+          <div style="text-align: center;">
+            <span class="sw-label">MAIN</span>
+            <p style="font-size: 12px; color: var(--sw-text-tertiary); margin-top: var(--sw-space-2);">Content</p>
+          </div>
+        </div>
+        <div class="demo-layout-right">
+          <span class="sw-label">DETAIL</span>
+          <p style="font-size: 12px; color: var(--sw-text-tertiary); margin-top: var(--sw-space-2);">Info</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-group">
+      <div class="component-label">Centered Card (Auth/Onboarding)</div>
+      <div style="height: 280px; background: var(--sw-bg-page); border-radius: var(--sw-radius-lg); display: flex; align-items: center; justify-content: center; border: 1px solid var(--sw-border-default);">
+        <div class="sw-card sw-card-sm" style="width: 320px; text-align: center;">
+          <div class="sw-card-title" style="font-size: var(--sw-text-2xl); text-align: center;">Welcome</div>
+          <p style="text-align: center; font-size: 14px; color: var(--sw-text-secondary); margin: var(--sw-space-2) 0 var(--sw-space-6);">Sign in to continue</p>
+          <input class="sw-input" type="email" placeholder="Email" style="margin-bottom: var(--sw-space-3);">
+          <button class="sw-btn sw-btn-primary" style="width: 100%;">Continue</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMATIONS -->
+  <section id="animations" class="showcase-section">
+    <h2 class="showcase-title">Animations</h2>
+    <p class="showcase-description">Subtle motion for feedback and delight. Keep it fast (0.15-0.3s).</p>
+
+    <div class="component-box">
+      <div class="component-label" style="margin-bottom: var(--sw-space-4);">Transition Durations</div>
+      <div style="display: flex; gap: var(--sw-space-6); flex-wrap: wrap;">
+        <div>
+          <p style="font-size: 12px; color: var(--sw-text-muted); margin-bottom: var(--sw-space-2);">Fast (0.15s)</p>
+          <p style="font-size: 13px; color: var(--sw-text-tertiary);">Hover, focus states</p>
+        </div>
+        <div>
+          <p style="font-size: 12px; color: var(--sw-text-muted); margin-bottom: var(--sw-space-2);">Normal (0.2s)</p>
+          <p style="font-size: 13px; color: var(--sw-text-tertiary);">Modal open/close</p>
+        </div>
+        <div>
+          <p style="font-size: 12px; color: var(--sw-text-muted); margin-bottom: var(--sw-space-2);">Slow (0.3s)</p>
+          <p style="font-size: 13px; color: var(--sw-text-tertiary);">Slide in, expand</p>
+        </div>
+        <div>
+          <p style="font-size: 12px; color: var(--sw-text-muted); margin-bottom: var(--sw-space-2);">Smooth (0.5s)</p>
+          <p style="font-size: 13px; color: var(--sw-text-tertiary);">Card transitions</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="component-box" style="margin-top: var(--sw-space-4);">
+      <div class="component-label" style="margin-bottom: var(--sw-space-4);">Easing</div>
+      <p style="font-size: 14px; color: var(--sw-text-secondary);">Use <code style="background: var(--sw-bg-hover); padding: 2px 6px; border-radius: 4px;">ease</code> for most transitions.</p>
+      <p style="font-size: 14px; color: var(--sw-text-secondary); margin-top: var(--sw-space-2);">Use <code style="background: var(--sw-bg-hover); padding: 2px 6px; border-radius: 4px;">cubic-bezier(0.4, 0, 0.2, 1)</code> for card/page transitions.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div style="margin-top: var(--sw-space-12); padding-top: var(--sw-space-6); border-top: 1px solid var(--sw-border-default);">
+    <p style="font-size: 12px; color: var(--sw-text-tertiary);">Stoneware Design System</p>
   </div>
-
-  <h2>Quick Start</h2>
-  <pre><code set:html={quickStartCode}></code></pre>
-
-  <h2>Three Ways to Use</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Method</th>
-        <th>File</th>
-        <th>Best For</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Full Bundle</strong></td>
-        <td><code>stoneware.css</code></td>
-        <td>New projects, complete UI transformation</td>
-      </tr>
-      <tr>
-        <td><strong>Tokens Only</strong></td>
-        <td><code>stoneware-tokens.css</code></td>
-        <td>Building custom components with our design language</td>
-      </tr>
-      <tr>
-        <td><strong>Individual Snippets</strong></td>
-        <td>Copy from docs</td>
-        <td>Adding specific components to existing projects</td>
-      </tr>
-    </tbody>
-  </table>
 </BaseLayout>
 
 <style>
-  .hero {
-    text-align: center;
-    padding: var(--sw-space-8) 0 var(--sw-space-12);
-  }
-
-  .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
-    margin-bottom: var(--sw-space-4);
-  }
-
-  .hero-tagline {
-    font-size: var(--sw-text-xl) !important;
-    color: var(--sw-text-secondary);
-    max-width: 500px;
-    margin: 0 auto var(--sw-space-8) !important;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: var(--sw-space-4);
-    justify-content: center;
-  }
-
-  .showcase-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--sw-space-6);
-    background: var(--sw-bg-page);
-    border: 1px solid var(--sw-border-default);
-    border-radius: var(--sw-radius-xl);
-    padding: var(--sw-space-6);
-    margin-bottom: var(--sw-space-6);
-  }
-
-  @media (max-width: 640px) {
-    .showcase-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
   .showcase-section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--sw-space-3);
+    margin-bottom: var(--sw-space-12);
+    scroll-margin-top: var(--sw-space-6);
   }
 
   .showcase-title {
-    font-size: var(--sw-text-xs) !important;
-    font-weight: var(--sw-font-semibold);
-    color: var(--sw-text-muted) !important;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 !important;
+    font-size: var(--sw-text-3xl) !important;
+    font-weight: 700 !important;
+    color: var(--sw-text-primary) !important;
+    margin-bottom: var(--sw-space-2) !important;
+    margin-top: 0 !important;
     padding: 0 !important;
     border: none !important;
   }
 
-  .card-showcase {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--sw-space-6);
-    margin-bottom: var(--sw-space-8);
-    flex-wrap: wrap;
-  }
-  .card-showcase > .sw-card{
-    width: calc(50% - (var(--sw-space-6) / 2))
+  .showcase-description {
+    font-size: var(--sw-text-md) !important;
+    color: var(--sw-text-secondary) !important;
+    margin-bottom: var(--sw-space-6) !important;
   }
 
-  .sw-card-body p {
-    margin: 0;
+  .component-group {
+    margin-bottom: var(--sw-space-8);
+  }
+
+  .component-label {
+    font-size: var(--sw-text-sm);
+    font-weight: 600;
+    color: var(--sw-text-tertiary);
+    margin-bottom: var(--sw-space-3);
+    display: block;
+  }
+
+  .component-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sw-space-3);
+  }
+
+  .component-box {
+    padding: var(--sw-space-6);
+    background: var(--sw-bg-card);
+    border: 1px solid var(--sw-border-default);
+    border-radius: var(--sw-radius-lg);
+  }
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--sw-space-3);
+  }
+
+  .color-swatch {
+    display: flex;
+    align-items: center;
+    gap: var(--sw-space-3);
+    padding: var(--sw-space-3);
+    background: var(--sw-bg-card);
+    border: 1px solid var(--sw-border-default);
+    border-radius: var(--sw-radius-md);
+  }
+
+  .color-swatch-color {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--sw-radius-md);
+    border: 1px solid var(--sw-border-default);
+    flex-shrink: 0;
+  }
+
+  .color-swatch-name {
     font-size: var(--sw-text-md);
+    font-weight: 500;
+    color: var(--sw-text-primary);
+  }
+
+  .color-swatch-value {
+    font-size: var(--sw-text-sm);
+    color: var(--sw-text-tertiary);
+    font-family: ui-monospace, monospace;
+  }
+
+  .spacing-demo {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--sw-space-4);
+    flex-wrap: wrap;
+  }
+
+  .spacing-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sw-space-2);
+  }
+
+  .spacing-bar {
+    background: var(--sw-accent);
+    border-radius: var(--sw-radius-sm);
+    width: 24px;
+  }
+
+  .spacing-label {
+    font-size: 11px;
+    color: var(--sw-text-tertiary);
+    font-family: ui-monospace, monospace;
+  }
+
+  .shadow-box {
+    width: 150px;
+    height: 100px;
+    background: var(--sw-bg-card);
+    border-radius: var(--sw-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--sw-text-sm);
     color: var(--sw-text-secondary);
+  }
+
+  .radius-demo {
+    display: flex;
+    gap: var(--sw-space-4);
+    flex-wrap: wrap;
+  }
+
+  .radius-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sw-space-2);
+  }
+
+  .radius-box {
+    width: 60px;
+    height: 60px;
+    background: var(--sw-gray-200);
+    border: 2px solid var(--sw-gray-400);
+  }
+
+  .demo-layout {
+    display: flex;
+    height: 200px;
+    border: 1px solid var(--sw-border-default);
+    border-radius: var(--sw-radius-lg);
+    overflow: hidden;
+  }
+
+  .demo-layout-sidebar {
+    width: 180px;
+    background: var(--sw-bg-card);
+    border-right: 1px solid var(--sw-border-default);
+    padding: var(--sw-space-4);
+  }
+
+  .demo-layout-main {
+    flex: 1;
+    background: var(--sw-bg-page);
+    padding: var(--sw-space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .demo-layout-right {
+    width: 180px;
+    background: var(--sw-bg-card);
+    border-left: 1px solid var(--sw-border-default);
+    padding: var(--sw-space-4);
+  }
+
+  .demo-chat-container {
+    max-width: 400px;
+    padding: var(--sw-space-4);
+    background: var(--sw-bg-page);
+    border-radius: var(--sw-radius-lg);
+  }
+
+  .demo-panel {
+    width: 280px;
+    border: 1px solid var(--sw-border-default);
+    border-radius: var(--sw-radius-lg);
+    overflow: hidden;
   }
 </style>

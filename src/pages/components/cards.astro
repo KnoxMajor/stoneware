@@ -31,13 +31,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <h2>With Header</h2>
   <div class="preview" style="background: var(--sw-bg-page);">
     <div class="sw-card" style="max-width: 400px;">
-      <h4 class="sw-card-title">Card Title</h4>
+      <h3 class="sw-card-title">Card Title</h3>
       <p class="sw-card-subtitle">Optional subtitle text</p>
       Card content goes here.
     </div>
   </div>
   <pre><code set:html={`&lt;div class="sw-card"&gt;
-  &lt;h4 class="sw-card-title"&gt;Card Title&lt;/h4&gt;
+  &lt;h3 class="sw-card-title"&gt;Card Title&lt;/h3&gt;
   &lt;p class="sw-card-subtitle"&gt;Optional subtitle&lt;/p&gt;
   Card content goes here.
 &lt;/div&gt;`}></code></pre>
@@ -47,17 +47,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <p>Constructive action goes on left</p>
   <div class="preview" style="background: var(--sw-bg-page);">
     <div class="sw-card" style="max-width: 400px;">
-      <h4 class="sw-card-title">Settings</h4>
+      <h3 class="sw-card-title">Settings</h3>
       <p class="sw-card-subtitle">Make changes to your account settings here.</p>
       <button class="sw-btn sw-btn-primary">Save</button>
-      <button class="sw-btn sw-btn-ghost">Cancel</button>
+      <button class="sw-btn sw-btn-secondary">Cancel</button>
     </div>
   </div>
   <pre><code set:html={`&lt;div class="sw-card"&gt;
   &lt;p&gt;Settings&lt;/p&gt;
   &lt;p class="sw-card-subtitle"&gt;Make changes to your account settings here.&lt;/p&gt;
   &lt;button class="sw-btn sw-btn-primary"&gt;Save&lt;/button&gt;
-  &lt;button class="sw-btn sw-btn-ghost"&gt;Cancel&lt;/button&gt;
+  &lt;button class="sw-btn sw-btn-secondary"&gt;Cancel&lt;/button&gt;
 &lt;/div&gt;`}></code></pre>
 
   <h2>CSS</h2>
