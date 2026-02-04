@@ -613,11 +613,19 @@ small {
   margin-bottom: var(--sw-space-2);
 }
 
+.sw-card-title:has(+ .sw-card-subtitle) {
+  margin-bottom: 0;
+}
+
 .sw-card-subtitle {
   font-size: var(--sw-text-lg);
   color: var(--sw-text-tertiary);
   line-height: var(--sw-leading-normal);
-  padding: var(--sw-space-3) 0px var(--sw-space-6);
+  padding-top: var(--sw-space-1);
+}
+
+.sw-card-subtitle + * {
+  margin-top: var(--sw-space-6);
 }
 
 .sw-card-content {
