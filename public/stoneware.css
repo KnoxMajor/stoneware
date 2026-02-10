@@ -204,9 +204,16 @@ ul, ol {
   --sw-primary: #fafafa;
   --sw-primary-hover: #e4e4e7;
   --sw-primary-active: #d4d4d8;
+  --sw-success: #86efac;
   --sw-success-bg: #052e16;
+  --sw-success-border: #14532d;
+  --sw-warning: #fbbf24;
   --sw-warning-bg: #431407;
+  --sw-warning-border: #92400e;
+  --sw-warning-text: #fde68a;
+  --sw-danger: #f87171;
   --sw-danger-bg: #450a0a;
+  --sw-danger-border: #991b1b;
   --sw-accent-bg: #1e3a5f;
   --sw-card-footer-bg: #27272a;
 }
