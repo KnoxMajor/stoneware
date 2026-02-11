@@ -67,6 +67,29 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   &lt;span&gt;Remember me&lt;/span&gt;
 &lt;/label&gt;`}></code></pre>
 
+  <h2>Toggle</h2>
+  <p>On/off switch for binary settings.</p>
+  <div class="preview">
+    <div style="display: flex; align-items: center; gap: var(--sw-space-6);">
+      <div class="sw-toggle" onclick="this.classList.toggle('on')"></div>
+      <div class="sw-toggle on" onclick="this.classList.toggle('on')"></div>
+    </div>
+  </div>
+  <pre><code set:html={`&lt;div class="sw-toggle"&gt;&lt;/div&gt;
+&lt;div class="sw-toggle on"&gt;&lt;/div&gt;`}></code></pre>
+
+  <h2>Toggle with Label</h2>
+  <div class="preview">
+    <label class="sw-toggle-label" onclick="this.querySelector('.sw-toggle').classList.toggle('on')">
+      <div class="sw-toggle"></div>
+      <span>Enable notifications</span>
+    </label>
+  </div>
+  <pre><code set:html={`&lt;label class="sw-toggle-label"&gt;
+  &lt;div class="sw-toggle"&gt;&lt;/div&gt;
+  &lt;span&gt;Enable notifications&lt;/span&gt;
+&lt;/label&gt;`}></code></pre>
+
   <h2>Select Options (Card Style)</h2>
   <p>Radio buttons styled as selectable cards.</p>
   <div class="preview">

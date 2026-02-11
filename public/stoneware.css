@@ -537,6 +537,63 @@ small {
   flex: 1;
 }
 
+/* Toggle Switch */
+.sw-toggle {
+  position: relative;
+  width: 28px;
+  height: 16px;
+  background: var(--sw-gray-300);
+  border-radius: var(--sw-radius-full);
+  cursor: pointer;
+  transition: background var(--sw-transition-fast);
+  flex-shrink: 0;
+}
+
+.sw-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background: var(--sw-white);
+  border-radius: var(--sw-radius-full);
+  box-shadow: var(--sw-shadow-sm);
+  transition: transform var(--sw-transition-fast);
+}
+
+.sw-toggle.on,
+.sw-toggle[data-on="true"] {
+  background: var(--sw-primary);
+}
+
+.sw-toggle.on::after,
+.sw-toggle[data-on="true"]::after {
+  transform: translateX(12px);
+}
+
+.sw-toggle:hover {
+  background: var(--sw-gray-400);
+}
+
+.sw-toggle.on:hover,
+.sw-toggle[data-on="true"]:hover {
+  background: var(--sw-primary-hover);
+}
+
+/* Toggle with Label */
+.sw-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sw-space-2);
+  cursor: pointer;
+}
+
+.sw-toggle-label span {
+  font-size: var(--sw-text-md);
+  color: var(--sw-text-primary);
+}
+
 /* Textarea */
 .sw-textarea {
   width: 100%;
