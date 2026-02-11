@@ -216,6 +216,10 @@ ul, ol {
   --sw-danger-border: #991b1b;
   --sw-accent-bg: #1e3a5f;
   --sw-card-footer-bg: #27272a;
+  --sw-toggle-off: #3f3f46;
+  --sw-toggle-off-hover: #52525b;
+  --sw-toggle-on: #71717a;
+  --sw-toggle-on-hover: #a1a1aa;
 }
 
 
@@ -542,7 +546,7 @@ small {
   position: relative;
   width: 28px;
   height: 16px;
-  background: var(--sw-gray-300);
+  background: var(--sw-toggle-off, var(--sw-gray-300));
   border-radius: var(--sw-radius-full);
   cursor: pointer;
   transition: background var(--sw-transition-fast);
@@ -564,7 +568,7 @@ small {
 
 .sw-toggle.on,
 .sw-toggle[data-on="true"] {
-  background: var(--sw-primary);
+  background: var(--sw-toggle-on, var(--sw-primary));
 }
 
 .sw-toggle.on::after,
@@ -573,12 +577,12 @@ small {
 }
 
 .sw-toggle:hover {
-  background: var(--sw-gray-400);
+  background: var(--sw-toggle-off-hover, var(--sw-gray-400));
 }
 
 .sw-toggle.on:hover,
 .sw-toggle[data-on="true"]:hover {
-  background: var(--sw-primary-hover);
+  background: var(--sw-toggle-on-hover, var(--sw-primary-hover));
 }
 
 /* Toggle with Label */
