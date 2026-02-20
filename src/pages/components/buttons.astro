@@ -86,6 +86,62 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   &lt;button class="sw-btn sw-btn-primary"&gt;Save Changes&lt;/button&gt;
 &lt;/div&gt;`}></code></pre>
 
+  <h2>Dropdown Button</h2>
+  <p>Button with a dropdown menu for multiple actions.</p>
+
+  <div class="preview">
+    <div class="sw-dropdown" id="download-dropdown">
+      <button class="sw-btn sw-btn-secondary" onclick="this.parentElement.classList.toggle('open')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="sw-dropdown-menu">
+        <button class="sw-dropdown-item">
+          .pdf
+        </button>
+        <button class="sw-dropdown-item">
+          .csv
+        </button>
+        <button class="sw-dropdown-item">
+          .png
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <pre><code set:html={`&lt;div class="sw-dropdown"&gt;
+  &lt;button class="sw-btn sw-btn-secondary" onclick="this.parentElement.classList.toggle('open')"&gt;
+    &lt;svg&gt;...&lt;/svg&gt; &lt;!-- download icon --&gt;
+    Download
+    &lt;svg&gt;...&lt;/svg&gt; &lt;!-- chevron icon --&gt;
+  &lt;/button&gt;
+  &lt;div class="sw-dropdown-menu"&gt;
+    &lt;button class="sw-dropdown-item"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+      Download PDF
+    &lt;/button&gt;
+    &lt;button class="sw-dropdown-item"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+      Download CSV
+    &lt;/button&gt;
+    &lt;button class="sw-dropdown-item"&gt;
+      &lt;svg&gt;...&lt;/svg&gt;
+      Download PNG
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;`}></code></pre>
+
+  <script>
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      document.querySelectorAll('.sw-dropdown.open').forEach(dropdown => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      });
+    });
+  </script>
+
   <h2>CSS</h2>
   <pre><code set:html={`.sw-btn {
   display: inline-flex;

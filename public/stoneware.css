@@ -442,6 +442,84 @@ small {
   font-size: var(--sw-text-xl);
 }
 
+/* Dropdown Button */
+.sw-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.sw-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--sw-space-1);
+  width: max-content;
+  background: var(--sw-bg-card);
+  border: 1px solid var(--sw-border-default);
+  border-radius: var(--sw-radius-lg);
+  box-shadow: var(--sw-shadow-lg);
+  z-index: var(--sw-z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity var(--sw-transition-fast), transform var(--sw-transition-fast), visibility var(--sw-transition-fast);
+}
+
+.sw-dropdown.open .sw-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.sw-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sw-space-2);
+  width: 100%;
+  padding: var(--sw-space-2) var(--sw-space-3);
+  background: transparent;
+  border: none;
+  font-size: var(--sw-text-md);
+  color: var(--sw-text-secondary);
+  text-align: left;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--sw-transition-fast);
+}
+
+.sw-dropdown-item:first-child {
+  border-radius: var(--sw-radius-lg) var(--sw-radius-lg) 0 0;
+}
+
+.sw-dropdown-item:last-child {
+  border-radius: 0 0 var(--sw-radius-lg) var(--sw-radius-lg);
+}
+
+.sw-dropdown-item:only-child {
+  border-radius: var(--sw-radius-lg);
+}
+
+.sw-dropdown-item:hover {
+  background: var(--sw-bg-hover);
+  color: var(--sw-text-primary);
+}
+
+.sw-dropdown-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--sw-text-tertiary);
+}
+
+.sw-dropdown-item:hover svg {
+  color: var(--sw-text-primary);
+}
+
+.sw-dropdown-divider {
+  height: 1px;
+  background: var(--sw-border-default);
+  margin: var(--sw-space-1) 0;
+}
+
 
 /* ==========================================================================
    6. FORM INPUTS
